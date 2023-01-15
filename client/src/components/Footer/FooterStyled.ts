@@ -11,7 +11,6 @@ export const FooterStyled = styled.div`
 
   section {
     display: flex;
-    flex-direction: column;
     align-items: center;
   }
    a, p, .modal-button {
