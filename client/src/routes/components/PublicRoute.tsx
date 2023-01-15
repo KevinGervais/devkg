@@ -1,6 +1,5 @@
 import { Redirect, Route } from "react-router-dom"
 
-import { IS_CORDOVA } from "@/constants"
 import { useReduxState } from "@/redux"
 
 import { AllRoutes, RouteProps } from "../model"

@@ -4,7 +4,7 @@
   "homepage": "./",
   "version": "0.3.0",
   "scripts": {
-    "start": "PORT=3700 craco start",
+    "start": "PORT=3800 craco start",
     "build": "GENERATE_SOURCEMAP=false craco build",
     "test": "jest",
     "add-fa": "node node_modules/font-awesome/add.js",

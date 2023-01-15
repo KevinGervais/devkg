@@ -30,6 +30,7 @@ export function Routes(): JSX.Element {
         <ActivePopup />
         <div className={(IS_CORDOVA || isFullScreen) ? "flex-1 overflow-auto" : "md:mt-[80px] flex-1"}>
           <Switch>
+            <AnyRoute isExact={true} path="/home" component={pages.Home} />
             <AnyRoute isExact={true} path="/about-us" component={pages.AboutUs} />
             <AnyRoute isExact={true} path="/not-found" component={pages.NotFound} />
             <AnyRoute isExact={true} path="/privacy" component={pages.Privacy} />
