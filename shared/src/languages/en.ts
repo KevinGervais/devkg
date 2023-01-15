@@ -611,7 +611,12 @@ export const en = {
   high: "High",
   min: "Min",
   max: "Max",
-  km: "km"
+  km: "km",
+  developer: "Fullstack Developer",
+  gitHub: "Project on GitHub",
+  website: "Web site",
+  appStore: "Mac app store",
+  logosTitle: "Technologies used through the different projects",
 } as const
 
 export const enSay: EnSay = en

@@ -1,9 +1,9 @@
-import { useReduxState } from "@/redux"
+import { Header } from "./Header"
 
 export function Home(): JSX.Element {
-  const { } = useReduxState(state => ({
-  }))
   return (
-    <div className="" />
+    <div>
+      <Header />
+    </div>
   )
 }

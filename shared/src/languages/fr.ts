@@ -613,4 +613,9 @@ export const fr: Say = {
   askRejectCommerce: (title: string) => `Voulez-vous vraiment rejetter le commerce ${title}?`,
   pressMe: (value: number) => `cliques-moi ${value} fois`,
   loginWith: (brand: string) => `Connexion avec ${brand.slice(0, 1).toUpperCase()}${brand.slice(1)}`,
+  developer: "Développeur Fullstack",
+  gitHub: "Projet sur GitHub",
+  website: "Site web",
+  appStore: "Mac app store",
+  logosTitle: "Technologies utilisées à travers les différents projets",
 }

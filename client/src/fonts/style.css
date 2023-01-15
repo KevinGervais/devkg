@@ -3,3 +3,13 @@
   font-size: 400;
   src: local('Aclonica-Regular'), url('./Aclonica-Regular.ttf') format('opentype');
 }
+@font-face {
+  font-family: poppins;
+  src: url(../fonts/Poppins-SemiBold.woff);
+}
+
+h1, h2 {
+  font-family: poppins;
+  font-weight: 900;
+  text-transform: uppercase;
+}
