@@ -22,13 +22,13 @@ export function Routes(): JSX.Element {
   return (
     <>
       <GlobalStyle />
-      <div className={tw`app-routes col ${isFullScreen && "h-full"}`}>
+      <div className={tw`app-routes col`}>
         <TitleBar />
         <Snackbar />
         <Loading />
         <ShowTermsWarning />
         <ActivePopup />
-        <div className={(IS_CORDOVA || isFullScreen) ? "flex-1 overflow-auto" : "md:mt-[80px] flex-1"}>
+        <div className="flex-1">
           <Switch>
             <AnyRoute isExact={true} path="/home" component={pages.Home} />
             <AnyRoute isExact={true} path="/about-us" component={pages.AboutUs} />
