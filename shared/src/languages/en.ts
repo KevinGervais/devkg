@@ -276,7 +276,6 @@ export const en = {
   problemDescription: "Problem description",
   createBugSuccess: "Bug report sent successfully",
   deleteBugSuccess: "Bug report deleted successfully",
-  mobileApp: "Mobile app",
   userAgent: "User agent",
   askDeleteBug: "Do you really want to delete this bug report",
   status: "Status",
@@ -617,6 +616,21 @@ export const en = {
   website: "Web site",
   appStore: "Mac app store",
   logosTitle: "Technologies used through the different projects",
+  webApp: "Web app",
+  mobileApp: "Mobile app",
+  software: "Software",
+  webDesign: "Web design",
+  showcaseWebsite: "Showcase website",
+  ecommerce: "E-commerce",
+  webAppText: "We will build state-of-the-art applications that meet the needs of your users.",
+  mobileAppText: "We will create user-friendly applications that adapt to all screens.",
+  softwareText: "We will develop the best software to help your business succeed and be more efficient.",
+  webDesignText: "We will take care of the look of your brand in order for it to reflect the merits of your business.",
+  showcaseWebsiteText: "We will develop for you a Showcase Website that will increase a possibility of growth in your online sales.",
+  ecommerceText: "We will allow you to make money online with any marketplace or transactional website.",
+  ourServices: "Our services"
+
+
 } as const
 
 export const enSay: EnSay = en

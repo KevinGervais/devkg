@@ -263,7 +263,6 @@ export const fr: Say = {
   "problemDescription": "Description du problème",
   "createBugSuccess": "Rapport de bug envoyé avec succès",
   "deleteBugSuccess": "Rapport de bogue supprimé avec succès",
-  "mobileApp": "App mobile",
   "userAgent": "Agent de l'utilisateur",
   "askDeleteBug": "Voulez-vous vraiment supprimer ce rapport de bug",
   "status": "Status",
@@ -618,4 +617,18 @@ export const fr: Say = {
   website: "Site web",
   appStore: "Mac app store",
   logosTitle: "Technologies utilisées à travers les différents projets",
+  webApp: "Application Web",
+  mobileApp: "Application mobile",
+  software: "Logiciel",
+  webDesign: "Conception Web",
+  showcaseWebsite: "Site web vitrine",
+  ecommerce: "E-commerce",
+  webAppText: "Nous construirons des applications de pointe qui répondront aux besoins de vos utilisateurs.",
+  mobileAppText: "Nous créerons des applications conviviales qui s'adaptent à tous les écrans.",
+  softwareText: "Nous développerons les meilleurs logiciels pour aider votre entreprise à réussir et à être plus efficace.",
+  webDesignText: "Nous prendrons soin de l'apparence de votre marque afin qu'elle reflète les mérites de votre entreprise.",
+  showcaseWebsiteText: "Nous développerons pour vous un site web vitrine qui augmentera les possibilités de croissance de vos ventes en ligne.",
+  ecommerceText: "Nous vous permettrons de gagner de l'argent en ligne avec n'importe quelle place de marché ou site web transactionnel.",
+  ourServices: "Nos services"
+
 }

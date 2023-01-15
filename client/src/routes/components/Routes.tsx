@@ -43,7 +43,6 @@ export function Routes(): JSX.Element {
             <Redirect isExact={true} from="/*" to="/not-found" />
           </Switch>
         </div>
-        {!IS_CORDOVA && !isFullScreen && <div className="h-16" />}
         <Footer />
       </div>
     </>

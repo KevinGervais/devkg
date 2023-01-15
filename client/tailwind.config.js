@@ -135,6 +135,7 @@ module.exports = {
       },
       animation: {
         "ripple": "ripple 600ms linear",
+        "twist": "twist 2000ms linear infinite",
       },
       screens: {
         "touch": { "raw": "(pointer: coarse)" },
@@ -146,6 +147,13 @@ module.exports = {
         "sm-max": {"max": "639px"},
       },
       keyframes: {
+        twist: {
+          "0%": { transform: "scale(1)" },
+          "25%": { transform: "scale(1.05) rotateZ(2deg) skewY(1deg)" },
+          "50%": { transform: "scale(1.03) rotateZ(-1deg) skewY(1.5deg)" },
+          "75%": { transform: "scale(1.03) rotateZ(-2deg) skewY(-1deg)" },
+          "100%": { transform: "scale(1)" },
+        },
         ripple: {
           "0%": { transform: "scale(1)", opacity: "1" },
           "100%": { transform: "scale(4)", opacity: "0" },
