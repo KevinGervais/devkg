@@ -3,22 +3,14 @@ import { Switch } from "react-router-dom"
 import { tw } from "@/shared"
 
 import { Footer, GlobalStyle, Loading, ShowTermsWarning, Snackbar, TitleBar } from "@/components"
-import { IS_CORDOVA, IS_DESKTOP } from "@/constants"
 import * as pages from "@/pages"
 import { ActivePopup } from "@/popups"
-import { useReduxState } from "@/redux"
 
 import { AnyRoute } from "./AnyRoute"
 import { PrivateRoute } from "./PrivateRoute"
 import { PublicRoute } from "./PublicRoute"
 import { Redirect } from "./Redirect"
 export function Routes(): JSX.Element {
-  const isFullScreen = useReduxState(state =>
-    state.ui.screenWidth === "xm"
-    || state.ui.screenWidth === "sm"
-    || !IS_DESKTOP
-  )
-
   return (
     <>
       <GlobalStyle />
@@ -28,7 +20,7 @@ export function Routes(): JSX.Element {
         <Loading />
         <ShowTermsWarning />
         <ActivePopup />
-        <div className="flex-1">
+        <div className="col">
           <Switch>
             <AnyRoute isExact={true} path="/home" component={pages.Home} />
             <AnyRoute isExact={true} path="/about-us" component={pages.AboutUs} />

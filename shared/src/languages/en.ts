@@ -615,7 +615,7 @@ export const en = {
   gitHub: "Project on GitHub",
   website: "Web site",
   appStore: "Mac app store",
-  logosTitle: "Technologies used through the different projects",
+  techUsed: "Technologies used",
   webApp: "Web app",
   mobileApp: "Mobile app",
   software: "Software",
@@ -628,8 +628,19 @@ export const en = {
   webDesignText: "We will take care of the look of your brand in order for it to reflect the merits of your business.",
   showcaseWebsiteText: "We will develop for you a Showcase Website that will increase a possibility of growth in your online sales.",
   ecommerceText: "We will allow you to make money online with any marketplace or transactional website.",
-  ourServices: "Our services"
-
+  ourServices: "Available services",
+  coFounderResolveMe: "Co-founder of ResolveMe",
+  ceoAvartaSolutions: "CEO of Avarta solutions",
+  testimonials: "Testimonials",
+  YoussofIbrahimText: "Kevin was exemplary in his work, work time and courtesy during his contract. I highly recommend him for anyone looking for a courteous, honest and professional developer. 5 stars guaranteed.",
+  OmarText: `
+I really enjoyed working with him. He is thorough. Always up to date with the latest technologies and makes sure to code following good practices.
+He is as good at front-end as he is at back-end. He prefers to code his own libraries rather than using libraries when it is not necessary.
+He has a very good command of CSS as well, so he can easily make any design you throw his way.
+Basically, Kevin is really versatile and can handle a product from conception to completion.
+He is very dogmatic but also very open to criticism and discussion.
+I really enjoyed working with him.
+`
 
 } as const
 

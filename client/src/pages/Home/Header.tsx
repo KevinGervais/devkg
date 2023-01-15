@@ -34,9 +34,9 @@ export function Header(): JSX.Element {
           />
         </Zoom>
         <Fade bottom={true}>
-          <a href="mailto:kevin.gervais@tutanota.com" className="mt-5 sm:text-[30px] text-lg text-center text-secondary-300">kevin.gervais@tutanota.com</a>
+          <a href="mailto:kevin.gervais@tutanota.com" className="mt-5 sm:text-[30px] text-lg text-center text-secondary-500">kevin.gervais@tutanota.com</a>
           <div className="w-[200px] h-0.5 bg-primary-100 mt-3 sm:w-[300px] sm:h-[3px] sm:my-3" />
-          <a className="text-lg text-center sm:text-2xl text-secondary-300" href="tel:514-827-8434">+1 514-827-8434</a>
+          <a className="text-lg text-center sm:text-2xl text-secondary-500" href="tel:514-827-8434">+1 514-827-8434</a>
         </Fade>
       </div>
     </header>

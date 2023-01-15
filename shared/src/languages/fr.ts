@@ -616,7 +616,7 @@ export const fr: Say = {
   gitHub: "Projet sur GitHub",
   website: "Site web",
   appStore: "Mac app store",
-  logosTitle: "Technologies utilisées à travers les différents projets",
+  techUsed: "Technologies utilisées",
   webApp: "Application Web",
   mobileApp: "Application mobile",
   software: "Logiciel",
@@ -629,6 +629,18 @@ export const fr: Say = {
   webDesignText: "Nous prendrons soin de l'apparence de votre marque afin qu'elle reflète les mérites de votre entreprise.",
   showcaseWebsiteText: "Nous développerons pour vous un site web vitrine qui augmentera les possibilités de croissance de vos ventes en ligne.",
   ecommerceText: "Nous vous permettrons de gagner de l'argent en ligne avec n'importe quelle place de marché ou site web transactionnel.",
-  ourServices: "Nos services"
+  ourServices: "Services offerts",
+  coFounderResolveMe: "Cofondateur de Resolve Me",
+  ceoAvartaSolutions: "Dirigeant de Avarta solutions",
+  testimonials: "Témoignages",
+  YoussofIbrahimText: "Kevin a été exemplaire dans son travail, son temps de travail et sa courtoisie durant son contrat. Je le recommande vivement à tous ceux qui recherchent un développeur courtois, honnête et professionnel. 5 étoiles garanties.",
+  OmarText: `
+  J’ai travaillé avec Kevin en tant que cofondateur de ResolveMe. J’ai vraiment aimé travailler avec lui. Il est minutieux. Toujours à jour avec les dernières technologies et s’assure de coder en suivant les bonnes pratiques.
+  Il est aussi bon en front-end qu’en back-end. Il préfère coder ses propres librairies plutôt que d’utiliser des librairies lorsque ce n’est pas nécessaire.
+  Il a une très bonne maitrise de CSS également, alors il peut facilement réaliser n’importe quel design que vous lancez dans sa direction.
+  En gros, Kevin est vraiment polyvalent et peut gérer un produit de sa conception à sa réalisation.
+  Il est très dogmatique mais est aussi très ouvert aux critiques et discussions.
+  J’ai vraiment aimé travailler avec lui.
+`
 
 }

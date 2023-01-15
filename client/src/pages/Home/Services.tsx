@@ -9,11 +9,11 @@ export function Services(): JSX.Element {
     say: state.languages.say
   }))
   return (
-    <div className="w-full pt-8 pb-5 shrink-0 h-max center col">
+    <div className="w-full pt-8 pb-8 shrink-0 h-max center col">
       <Fade top={true}>
         <h2 className="mb-5 font-sans font-normal">{say.ourServices}</h2>
       </Fade>
-      <div className="grid max-w-screen-lg grid-cols-1 gap-4 px-2 sm:grid-cols-2 md:grid-cols-3">
+      <div className="grid max-w-screen-lg grid-cols-1 gap-4 px-4 sm:grid-cols-2 md:grid-cols-3">
         <ServiceItem
           title={say.webApp}
           description={say.webAppText}
