@@ -29,7 +29,7 @@ tsFileList.forEach(filePath => {
 ${fileContent}`
 })
 
-Object.entries(en.en).forEach(([key, value]) =>{
+Object.entries(fr.fr).forEach(([key, value]) =>{
   if (concatAllFileContents.includes(key)) {
     finalEn[key] = value
     finalFr[key] = fr.fr[key]

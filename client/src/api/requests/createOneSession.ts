@@ -19,7 +19,6 @@ export function createOneSession(
   const sessionId = getStorageItem("sessionId") || undefined
   const userId = getStorageItem("currentUser")?._id
   const secureId = getStorageItem("secureId") || undefined
-  const notificationRegistrationId = getStorageItem("notificationRegistrationId") || undefined
   handleSocketRequest(
     "sessions",
     "createOne",
@@ -28,7 +27,6 @@ export function createOneSession(
       userId,
       deviceId,
       secureId,
-      notificationRegistrationId
     }, data => {
 
       SocketIo.launchCallbackArray()

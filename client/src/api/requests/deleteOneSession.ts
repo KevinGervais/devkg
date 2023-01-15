@@ -13,10 +13,7 @@ export function deleteOneSession(isRedirect: boolean): void {
     isShowTermsWarning: allStorageData.isShowTermsWarning,
     currentUser: undefined,
     selectedLanguage: undefined,
-    currentLocation: allStorageData.currentLocation,
-    favoriteCommerceList: [],
     lastAppVersion: allStorageData.lastAppVersion,
-    notificationRegistrationId: allStorageData.notificationRegistrationId,
   })
   resetReduxState()
   SocketIo.launch(true)

@@ -1,7 +1,5 @@
 
-import { PostalAddress } from "."
-import { AllLanguages, AllNotificationTemplates, AllOSTypes, LanguageParams, Remove, RequestContent, RequestData } from ".."
-import { AllEmailTemplates } from "./emails"
+import { AllLanguages, AllOSTypes, LanguageParams, Remove, RequestContent, RequestData } from ".."
 export interface User {
   _id: string
   firstName: string

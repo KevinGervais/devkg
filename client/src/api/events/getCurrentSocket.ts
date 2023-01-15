@@ -1,7 +1,7 @@
 import { getReduxState } from "@/redux"
 
 import { SocketIo } from "../classes"
-import { createOneSession, getManyTaxes } from "../requests"
+import { createOneSession } from "../requests"
 
 
 export function getCurrentSocketEvent(): void {
@@ -11,7 +11,6 @@ export function getCurrentSocketEvent(): void {
   }) => {
     SocketIo.setSharedKey(sharedKey)
     SocketIo.setSocketId(socketId)
-    getManyTaxes()
     if (getReduxState().users.currentUser) {
       createOneSession({})
     } else {

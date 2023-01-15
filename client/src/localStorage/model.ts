@@ -1,4 +1,4 @@
-import { AllLanguages, AnyAddress, Commerce, Remove, User } from "@/shared"
+import { AllLanguages, AnyAddress, Remove, User } from "@/shared"
 
 
 export interface LocalStorageData {
@@ -14,7 +14,4 @@ export interface LocalStorageData {
   > & { isEmailToken?: boolean } | undefined
   selectedLanguage: AllLanguages | undefined
   lastAppVersion: string | undefined
-  notificationRegistrationId: string | undefined
-  favoriteCommerceList: Commerce[]
-  currentLocation: AnyAddress | undefined
 }
