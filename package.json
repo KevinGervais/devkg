@@ -1,0 +1,30 @@
+{
+  "name": "go-cook",
+  "version": "0.10.0",
+  "description": "",
+  "main": "server/build/index.js",
+  "homepage": "https://kevingervais.ca/",
+  "engines": {
+    "node": "18.x",
+    "yarn": "1.22"
+  },
+  "scripts": {
+    "init-project": "yarn; cd client; yarn; cd ../shared; yarn; cd ../server; yarn; cd ..",
+    "start": "cd ./server; yarn build; yarn start",
+    "lint": "tslint -c tslint.json 'client/src/*.ts'",
+    "prebuild-web": "cd ./client; yarn; cd ../shared; yarn; yarn build-client;",
+    "build": "cd ./shared; yarn; yarn build-client; cd ../client; yarn; yarn build; yarn build-web;  cd ../server; yarn;",
+    "build-ios": "cd client; yarn build; yarn build-mobile; cd ../mobile; yarn build-ios;",
+    "deploy": "git checkout deploy; git pull origin master; git stage .; git commit -m'merged master into deploy'; git push origin deploy; git checkout master",
+    "release": "git checkout release; git pull origin master; git stage .; git commit -m'merged master into release'; git push origin release; git checkout master",
+    "logs": "heroku logs --tail --source app --remote heroku",
+    "add-heroku": "git remote add heroku git@heroku.com:kevingervais.git",
+    "new-version": "node ./scripts/updateVersion.js"
+  },
+  "dependencies": {
+    "tslint": "^6.1.3",
+    "tslint-react": "^5.0.0",
+    "typescript": "^4.9.3",
+    "xml2json": "^0.12.0"
+  }
+}

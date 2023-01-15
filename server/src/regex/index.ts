@@ -1,0 +1,3 @@
+export { EMAIL_REGEX } from "./EMAIL_REGEX"
+export { PHONE_REGEX } from "./PHONE_REGEX"
+export { POSTAL_ADDRESS_REGEX } from "./POSTAL_ADDRESS_REGEX"

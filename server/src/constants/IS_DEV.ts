@@ -1,0 +1,1 @@
+export const IS_DEV: boolean = !process.env.PORT && !process.env.DB_SECRET

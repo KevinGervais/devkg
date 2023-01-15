@@ -1,0 +1,1 @@
+export { ValidateNewUser } from "./ValidateNewUser"

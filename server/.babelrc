@@ -1,0 +1,27 @@
+{
+  "presets": [
+    "@babel/preset-typescript"
+  ],
+  "plugins": [
+    "@babel/plugin-transform-typescript",
+    [
+      "module-resolver",
+      {
+        "alias": {
+          "@": "./src",
+          "shared": "../shared/build/index.js"
+        }
+      }
+    ],
+    [
+      "@babel/plugin-transform-modules-commonjs",
+      {
+        "strict": false,
+        "noInterop": false,
+        "lazy": false,
+        "loose": false,
+        "allowTopLevelThis": true
+      }
+    ]
+  ]
+}

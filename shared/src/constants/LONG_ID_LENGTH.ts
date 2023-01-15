@@ -1,0 +1,1 @@
+export const LONG_ID_LENGTH = 2048 as const

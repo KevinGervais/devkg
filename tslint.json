@@ -1,0 +1,123 @@
+{
+  "defaultSeverity": "error",
+  "extends": [
+    "tslint:recommended",
+    "tslint-react"
+  ],
+  "jsRules": {},
+  "rules": {
+    "jsx-key": true,
+    "jsx-wrap-multiline": true,
+    "no-floating-promises": [
+      true
+    ],
+    "no-async-without-await": true,
+    "no-unused-expression": true,
+    "typedef": [
+      true,
+      "call-signature",
+      "parameter",
+      "property-declaration",
+      "member-variable-declaration"
+    ],
+    "jsx-no-lambda": false,
+    "jsx-boolean-value": "never",
+    "no-eval": false,
+    "semicolon": [
+      true,
+      "never"
+    ],
+    "object-literal-sort-keys": false,
+    "no-shadowed-variable": [
+      true,
+      {
+        "class": true,
+        "enum": true,
+        "function": true,
+        "interface": false,
+        "namespace": true,
+        "typeAlias": false,
+        "typeParameter": false
+      }
+    ],
+    "arrow-parens": [
+      true,
+      "ban-single-arg-parens"
+    ],
+    "max-line-length": [
+      true,
+      160
+    ],
+    "no-trailing-whitespace": [
+      true,
+      "ignore-comments"
+    ],
+    "ordered-imports": [
+      true,
+      {
+        "import-sources-order": "lowercase-last",
+        "named-imports-order": "lowercase-last",
+        "module-source-path": "full",
+        "grouped-imports": true,
+        "groups": [
+          "^[a-zA-Z]",
+          "^shared",
+          "^@/shared",
+          "^@",
+          "^."
+        ]
+      }
+    ],
+    "curly": [
+      true
+    ],
+    "no-console": [
+      false
+    ],
+    "quotemark": [
+      true,
+      "double"
+    ],
+    "max-classes-per-file": [
+      true,
+      10,
+      "exclude-class-expressions"
+    ],
+    "trailing-comma": [
+      false
+    ],
+    "variable-name": [
+      false,
+      "ban-keywords",
+      "check-format",
+      "allow-leading-underscore",
+      "allow-trailing-underscore"
+    ],
+    "interface-name": [
+      false
+    ],
+    "member-ordering": [
+      true,
+      {
+        "order": [
+          "public-static-field",
+          "public-instance-field",
+          "private-static-field",
+          "private-instance-field",
+          "public-constructor",
+          "private-constructor",
+          "public-static-method",
+          "public-instance-method",
+          "protected-instance-method",
+          "private-instance-method",
+          "private-static-method"
+        ]
+      }
+    ],
+    "no-namespace": [
+      true,
+      "allow-declarations"
+    ]
+  },
+  "rulesDirectory": []
+}

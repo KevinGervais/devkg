@@ -1,0 +1,15 @@
+**/node_modules
+**/yarn-error.log
+**/build
+**/appBuild
+client/src/shared
+**/font-awesome
+**/release
+**/build-temp
+server/emailTemplates
+server/notificationTemplates
+mobile/platforms
+mobile/plugins
+mobile/www
+**/*/.DS_Store
+**/*/.eslintcache

@@ -1,0 +1,58 @@
+name: Create release build for Android
+
+on:
+  push:
+    branches: release
+
+jobs:
+  build_client:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16
+      - name: Init client and shared
+        working-directory: ./
+        run: CI= yarn prebuild-web
+      - name: yarn build client
+        working-directory: client
+        run: CI= yarn build
+      - uses: actions/upload-artifact@v2
+        with:
+          name: build_folder
+          path: client/build/*
+  build_mobile:
+    needs: build_client
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16
+      - uses: actions/setup-java@v3
+        with:
+          distribution: zulu
+          java-version: '11'
+          java-package: jdk
+          architecture: x64
+      - uses: actions/download-artifact@v2
+        with:
+          name: build_folder
+          path: client/build
+      - name: Init client and shared
+        working-directory: ./
+        run: CI= yarn prebuild-web
+      - working-directory: client
+        run: yarn build-mobile
+      - name: init and build android
+        working-directory: mobile
+        run: |
+          yarn prebuild-android
+          yarn release-android
+      - uses: actions/upload-artifact@v2
+        with:
+          name: android
+          path: mobile/platforms/android/app/build/outputs/apk

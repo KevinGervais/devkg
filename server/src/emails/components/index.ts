@@ -1,0 +1,5 @@
+export { footer } from "./footer"
+export { head } from "./head"
+export { layout } from "./layout"
+export { quote } from "./quote"
+export { styles } from "./styles"

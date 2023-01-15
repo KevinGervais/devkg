@@ -1,0 +1,159 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+div,
+iframe,
+p,
+blockquote,
+pre,
+a,
+abbr,
+code,
+img,
+small,
+strong,
+sub,
+sup,
+b,
+u,
+i,
+fieldset,
+label,
+legend,
+canvas,
+embed,
+footer,
+header,
+menu,
+nav,
+output,
+section,
+audio,
+video,
+input,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-weight: 300;
+  vertical-align: baseline;
+  outline: none;
+}
+
+:root {
+  --safe-area-inset-top: 24px;
+  --safe-area-inset-right: 0px;
+  --safe-area-inset-bottom: 0px;
+  --safe-area-inset-left: 0px;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+
+ul,
+ol {
+  line-height: 125%;
+  padding-inline-start: 20px;
+}
+
+button:focus,
+input:focus,
+textarea:focus {
+  outline: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--grey-700);
+}
+
+h1 {
+  font-weight: 600;
+  line-height: 125%;
+  font-size: 38px;
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 32px;
+}
+
+h3 {
+  font-weight: 600;
+  font-size: 24px;
+}
+
+h4 {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+h5 {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+h6 {
+  font-weight: 400;
+  font-size: 12px;
+}
+
+p {
+  line-height: 125%;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  color: var(--grey-900);
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html,
+#root,
+textarea {
+  font-family: Avenir, Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: white;
+  line-height: 1.25;
+}
+
+button:focus,
+input:focus,
+textarea:focus {
+  outline: none;
+}
+
+.mapboxgl-ctrl-logo {
+  display: none !important;
+}
+
+.map-marker {
+  background-repeat: no-repeat;
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9IiNmZmMxMDciIHZpZXdCb3g9IjAgMCAzODQgNTEyIj4KICAgIDxwYXRoCiAgICAgICAgZD0iTTE3Mi4yNjggNTAxLjY3QzI2Ljk3IDI5MS4wMzEgMCAyNjkuNDEzIDAgMTkyIDAgODUuOTYxIDg1Ljk2MSAwIDE5MiAwczE5MiA4NS45NjEgMTkyIDE5MmMwIDc3LjQxMy0yNi45NyA5OS4wMzEtMTcyLjI2OCAzMDkuNjctOS41MzUgMTMuNzc0LTI5LjkzIDEzLjc3My0zOS40NjQgMHpNMTkyIDI3MmM0NC4xODMgMCA4MC0zNS44MTcgODAtODBzLTM1LjgxNy04MC04MC04MC04MCAzNS44MTctODAgODAgMzUuODE3IDgwIDgwIDgweiIgLz4KICAgIDwvc3ZnPg==");
+}
+
+.grabbing * {
+  cursor: grabbing !important;
+}

@@ -1,0 +1,1 @@
+export { getPopupsInitState } from "./getPopupsInitState"

@@ -1,0 +1,5 @@
+@font-face {
+  font-family: aclonica;
+  font-size: 400;
+  src: local('Aclonica-Regular'), url('./Aclonica-Regular.ttf') format('opentype');
+}
