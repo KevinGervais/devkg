@@ -650,7 +650,10 @@ I really enjoyed working with him.,
   fullstackFreelanceDeveloper: "Fullstack freelance developer",
   businessOwnerAndDeveloper: "Business owner and main fullstack developer",
   multiFunctionCalculator: "Multi function calculator",
-  carBrokerage: "Car brokerage and catalog service"
+  carBrokerage: "Car brokerage and catalog service",
+  now: "Now",
+  files: "Files",
+  linesOfCode: "Lines of code"
 } as const
 
 export const enSay: EnSay = en

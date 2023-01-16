@@ -21,7 +21,7 @@ export function ImageGallery(props: ImageGalleryProps): JSX.Element {
           onClick={() => imgCount && setImageIndex(0)}
         >
           {!imgCount && (
-            <Icon name="image" className={`w-full h-full center bg-grey-50 text-grey-300 children:w-16 children:h-16 ${isSmall ? "rounded-2xl bg-grey-100" : ""}`} />
+            <Icon name="image" className={`w-full h-full center bg-grey-100 text-grey-300 children:w-16 children:h-16 ${isSmall ? "rounded-2xl bg-grey-100" : ""}`} />
           )}
           {!!imageList[0] && (
             <>

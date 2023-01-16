@@ -651,5 +651,8 @@ export const fr: Say = {
   fullstackFreelanceDeveloper: "Fullstack freelance developer",
   businessOwnerAndDeveloper: "Propriétaire d'entreprise et principal développeur fullstack",
   multiFunctionCalculator: "Multi function calculator",
-  carBrokerage: "Service de courtage et de catalogue de voitures"
+  carBrokerage: "Service de courtage et de catalogue de voitures",
+  now: "Maintenant",
+  files: "Fichiers",
+  linesOfCode: "Lignes de code"
 }
