@@ -12,7 +12,7 @@ export function ServiceItem({
 }): JSX.Element {
   return (
     <Zoom bottom={true}>
-      <div className="relative w-full h-[200px] text-center p-3 hover:bg-primary-100 transition-all in-img:hover:opacity-100 duration-500 col center hover:shadow-lg rounded-lg">
+      <div className="relative w-full overflow-hidden h-[200px] text-center p-3 hover:bg-primary-100 transition-all in-img:hover:opacity-100 duration-500 col center hover:shadow-lg rounded-lg">
         <Icon name={iconName} type="solid" className="z-20 h-8 mb-3 text-rating" />
         <h4 className="z-20 mb-2 text-xl font-medium">{title}</h4>
         <p className="z-20">{description}</p>

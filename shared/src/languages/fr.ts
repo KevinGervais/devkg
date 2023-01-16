@@ -641,6 +641,15 @@ export const fr: Say = {
   En gros, Kevin est vraiment polyvalent et peut gérer un produit de sa conception à sa réalisation.
   Il est très dogmatique mais est aussi très ouvert aux critiques et discussions.
   J’ai vraiment aimé travailler avec lui.
-`
-
+`,
+  previousProjects: "Projets réalisés",
+  seniorFullstackFreelanceDeveloper: "Senior Fullstack Freelance Developer",
+  healthCare: "Agence de placement en santé",
+  cateringService: "Plateforme de service de traiteur",
+  toolRental: "Plateforme de location d'outils",
+  healthCareStartup: "Startup de placement en santé",
+  fullstackFreelanceDeveloper: "Fullstack freelance developer",
+  businessOwnerAndDeveloper: "Propriétaire d'entreprise et principal développeur fullstack",
+  multiFunctionCalculator: "Multi function calculator",
+  carBrokerage: "Service de courtage et de catalogue de voitures"
 }

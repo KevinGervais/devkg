@@ -639,9 +639,18 @@ He is as good at front-end as he is at back-end. He prefers to code his own libr
 He has a very good command of CSS as well, so he can easily make any design you throw his way.
 Basically, Kevin is really versatile and can handle a product from conception to completion.
 He is very dogmatic but also very open to criticism and discussion.
-I really enjoyed working with him.
-`
-
+I really enjoyed working with him.,
+`,
+  previousProjects: "Completed projects",
+  seniorFullstackFreelanceDeveloper: "Senior Fullstack Freelance Developer",
+  healthCare: "Health care placement agency",
+  cateringService: "Catering service marketplace",
+  toolRental: "Tool rental marketplace",
+  healthCareStartup: "Health care placement startup",
+  fullstackFreelanceDeveloper: "Fullstack freelance developer",
+  businessOwnerAndDeveloper: "Business owner and main fullstack developer",
+  multiFunctionCalculator: "Multi function calculator",
+  carBrokerage: "Car brokerage and catalog service"
 } as const
 
 export const enSay: EnSay = en

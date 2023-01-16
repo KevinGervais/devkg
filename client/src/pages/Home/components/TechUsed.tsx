@@ -3,6 +3,8 @@ import { Tooltip } from "@/components"
 import imageMap from "@/images"
 import { useReduxState } from "@/redux"
 
+import { LOGO_LIST } from "../constants/LOGO_LIST"
+
 // tslint:disable-next-line:no-var-requires
 const Fade = require("react-reveal/Fade")
 // tslint:disable-next-line:no-var-requires
@@ -12,12 +14,15 @@ export function TechUsed(): JSX.Element {
     say: state.languages.say
   }))
   return (
-    <div className="w-full pt-8 pb-8 bg-white shrink-0 h-max center col">
+    <div
+      style={{ backgroundImage: "url(/images/whitenoise.png)", backgroundSize: "150px" }}
+      className="w-full pt-8 pb-8 bg-white shrink-0 h-max center col"
+    >
       <Fade top={true}>
         <h2 className="mb-5 font-sans font-normal">{say.techUsed}</h2>
       </Fade>
       <div className="flex flex-wrap max-w-screen-md center">
-        {imageList.map(str => (
+        {LOGO_LIST.map(str => (
 
           <Zoom bottom={true} key={str}>
             <a
@@ -57,33 +62,3 @@ export const websiteDict = {
   "Wordpress": "https://wordpress.com"
 }
 
-const imageList = [
-  "React",
-  "NodeJs",
-  "Typescript",
-  "TailwindCss",
-  "Redux",
-  "MongoDb",
-  "Electron",
-  "Stripe",
-  "Paypal",
-  "Cordova",
-  "Socket.io",
-  "Styled Components",
-  "React-router",
-  "React-Bootstrap",
-  "Express",
-  "Jira",
-  "Sass",
-  "Git",
-  "GitHub",
-  "NightWatch",
-  "Cucumber Tests",
-  "Jest",
-  "NPM",
-  "MathJs",
-  "Visual studio code",
-  "Atom",
-  "Affinity",
-
-] as const
