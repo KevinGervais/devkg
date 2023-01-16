@@ -90,7 +90,7 @@ export function Projects(): JSX.Element {
           lineOfCodeCount={52591}
           toolList={["Typescript", "React", "Redux", "TailwindCss", "Cordova", "React-router", "NodeJs", "MongoDb", "Express", "Styled Components", "Stripe", "Paypal"]}
           website="https://gocook.ca"
-          imageList={[]}
+          imageList={["gocook1", "gocook2", "gocook3"]}
           enList={[
             "Allow any user to become a cook and sell his own meals",
             "Filter cook selection with a detailed profile form",
@@ -121,7 +121,7 @@ export function Projects(): JSX.Element {
           lineOfCodeCount={24461}
           toolList={["Typescript", "React", "Redux", "TailwindCss", "React-router", "NodeJs", "MongoDb", "Express", "Styled Components"]}
           website="https://www.avartasolutions.com"
-          imageList={[]}
+          imageList={["avarta5", "avarta4", "avarta3", "avarta2", "avarta1"]}
           enList={[
             "Make a stunning website designed in dark mode to atract customers",
             "Conceive forms that helps costumers to describe exaclty what kind of vehicle they want",
