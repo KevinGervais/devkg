@@ -4,13 +4,13 @@ const en = (
   <>
     <h2>Privacy Policy</h2>
     <p>
-      The term used "KevinGervais" in this Privacy Policy refers to our website https://kevingervais.ca
+      The term used "KevinGervais" in this Privacy Policy refers to our website https://kevingervais.herokuapp.com
       and our KevinGervais iOS and Android app unless otherwise defined in this
       Privacy Policy.
     </p>
     <p>
-      this website is built and owned by Mouhcine Mouhaddab. This SERVICE is provided by.
-      Mouhcine Mouhaddab and is intended to be
+      this website is built and owned by Kevin Gervais. This SERVICE is provided by.
+      Kevin Gervais and is intended to be
       be used as is.
     </p>
     <p>
@@ -56,8 +56,8 @@ const en = (
       are stored on your device's internal memory.
     </p>
     <p>
-      These cookies and local storage are necessary for kevingervais.ca to function properly.
-      You can choose not to use them by not using kevingervais.ca services.
+      These cookies and local storage are necessary for kevingervais.herokuapp.com to function properly.
+      You can choose not to use them by not using kevingervais.herokuapp.com services.
     </p>
     <p><strong>KevinGervais messaging</strong></p>
     <p>
@@ -82,27 +82,6 @@ const en = (
       assigned to them on our behalf. However, they are obligated to
       not to disclose or use the information for any other
       purposes.
-    </p>
-    <p><strong>Paypal service providers</strong></p>
-    <p>
-      We offer the ability to pay for KevinGervais rentals with paypal.
-      We do not collect any banking data via paypal. However, a paypalOrderId
-      will be linked to your purchase and a paypalPayerId will be linked to you.
-      If there is a partial or total refund of the purchase and/or deposit according to the terms and conditions
-      of KevinGervais, the paypalPayerId linked to you will be used for the refund.
-
-      When you want to publish a commerce on KevinGervais, if you do not have a paypalPayerId linked to your account yet
-      you have to link your Paypal account to your KevinGervais account to get your paypalPayerId.
-
-      This paypalPayerId will be used to send you payments for bookings made according to the terms and conditions
-      of KevinGervais.
-    </p>
-    <p><strong>Stripe service providers (payments)</strong></p>
-    <p>
-      We offer the ability to pay for KevinGervais rentals with Stripe.
-      We do not collect any banking data via Stripe. However, a stripeOrderId
-      will be linked to your purchase. If there is a partial or full refund of the purchase and/or deposit
-      according to KevinGervais's terms and conditions, the stripeOrderId linked to your purchase will be used for the refund.
     </p>
     <p><strong>Security</strong></p>
     <p>

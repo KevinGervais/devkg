@@ -4,13 +4,13 @@ const fr = (
   <>
     <h2>Politique de confidentialité</h2>
     <p>
-      Le terme utilisé "KevinGervais" dans cette politique de confidentialité fait référence à notre site web https://kevingervais.ca
+      Le terme utilisé "KevinGervais" dans cette politique de confidentialité fait référence à notre site web https://kevingervais.herokuapp.com
       et notre application iOS et Android KevinGervais à moins qu'ils ne soient définis autrement dans la présente
       politique de confidentialité.
     </p>
     <p>
-      ce site web est construit et est la propriété de Mouhcine Mouhaddab. Ce SERVICE est fourni par
-      Mouhcine Mouhaddab et est destiné à être
+      ce site web est construit et est la propriété de Kevin Gervais. Ce SERVICE est fourni par
+      Kevin Gervais et est destiné à être
       être utilisé tel quel.
     </p>
     <p>
@@ -56,8 +56,8 @@ const fr = (
       sont stockés sur la mémoire interne de votre appareil.
     </p>
     <p>
-      Ces cookies et ce stockage local sont nécessaires au bon fonctionnement de kevingervais.ca.
-      Vous pouvez choisir de ne pas les utiliser en n'utilisant pas les services de kevingervais.ca.
+      Ces cookies et ce stockage local sont nécessaires au bon fonctionnement de kevingervais.herokuapp.com.
+      Vous pouvez choisir de ne pas les utiliser en n'utilisant pas les services de kevingervais.herokuapp.com.
     </p>
     <p><strong>Messagerie de KevinGervais</strong></p>
     <p>
@@ -82,27 +82,6 @@ const fr = (
       qui leur sont assignées en notre nom. Cependant, ils sont obligés
       de ne pas divulguer ou utiliser les informations à toute autre
       fins.
-    </p>
-    <p><strong>Fournisseurs du service de Paypal</strong></p>
-    <p>
-      Nous offrons la possibilité de payer les locations d'produit de KevinGervais avec paypal.
-      Nous ne récoltons aucune donnée bancaire via Paypal. Cependant, un paypalOrderId
-      sera lié à votre achât et un paypalPayerId sera lié à vous.
-      S'il y a remboursement partiel ou total de l'achât et/ou du dépôt selon les termes et conditions
-      de KevinGervais, le paypalPayerId lié à vous sera utilisé pour le remboursement.
-
-      Lorsque vous voulez publier un produit sur KevinGervais, si vous n'avez pas encore de paypalPayerId lié à votre compte,
-      vous devez lier votre compte Paypal à votre compte KevinGervais pour récupérer votre paypalPayerId.
-
-      Ce paypalPayerId sera utilisé pour vous envoyer des paiements pour les réservations faites selon les termes et conditions
-      de KevinGervais.
-    </p>
-    <p><strong>Fournisseurs du service de Stripe (paiements)</strong></p>
-    <p>
-      Nous offrons la possibilité de payer les locations d'produit de KevinGervais avec Stripe.
-      Nous ne récoltons aucune donnée bancaire via Stripe. Cependant, un stripeOrderId
-      sera lié à votre achât. S'il y a remboursement partiel ou total de l'achât et/ou du dépôt
-      selon les termes et conditions de KevinGervais, le stripeOrderId lié à votre achât sera utilisé pour le remboursement.
     </p>
     <p><strong>Sécurité</strong></p>
     <p>

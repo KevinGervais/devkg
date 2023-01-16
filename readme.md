@@ -76,7 +76,7 @@ kevingervais
 		5. click ```Apple ID```
 		6. enter the kevingervais credentials
 		7. close ```preferences```
-		8. make sure that in signing and capabilities the checkbox ```automatically manage signing``` is selected and the team is ```Mouhcine Mouhaddab```
+		8. make sure that in signing and capabilities the checkbox ```automatically manage signing``` is selected and the team is ```Kevin Gervais```
 		9. plug your iphone, select ```iphone``` from the device tab
 		10. click the play button on top
 - to make an ios release to ```app store connect```

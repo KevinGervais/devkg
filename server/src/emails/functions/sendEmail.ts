@@ -22,7 +22,7 @@ export async function sendEmail<TemplateName extends AllEmailTemplates>(
     secure: false,
     auth: {
       user: "notify@gocook.ca",
-      pass: "Isl@m132435"
+      pass: ""
     }
   })
   const { htmlTemplate, subject } = emailTemplateMap[name]({ ...params, say, language } as any)

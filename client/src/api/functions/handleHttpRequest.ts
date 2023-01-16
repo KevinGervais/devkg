@@ -30,7 +30,7 @@ export function handleHttpRequest<Collection extends AllCollections, Path extend
     setReduxState("ui", { loadingCount: getReduxState().ui.loadingCount + 1 })
   }
 
-  const url = IS_DEV ? "http://localhost:8080" : `https://kevingervais.ca`
+  const url = IS_DEV ? "http://localhost:8080" : `https://kevingervais.herokuapp.com`
   axios({
     url: `${url}/api/${collection}/${path as string}`,
     method: "post",
