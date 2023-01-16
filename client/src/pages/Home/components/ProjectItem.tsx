@@ -46,8 +46,8 @@ export function ProjectItem({
   }))
   return (
     <Zoom bottom={true}>
-      <div className="w-full overflow-hidden bg-white rounded-lg shadow-lg">
-        <div className="items-center justify-between w-full px-4 py-3 row bg-rating">
+      <div className="w-full overflow-hidden bg-white rounded-lg shadow-xl">
+        <div className="items-center justify-center w-full px-4 py-3 sm:justify-between sm-max:text-center col sm:row bg-rating">
           <div>
             <div className="mb-1 col sm:row sm:items-center">
               <div className="px-3 text-xl font-semibold rounded-full h-7 center sm:mr-2 bg-white/50">{businessName}</div>
@@ -60,17 +60,17 @@ export function ProjectItem({
             {`${dayjs(fromDate).format("MMM YYYY")} - ${toDate ? dayjs(fromDate).format("MMM YYYY") : say.now}`}
           </div>
         </div>
-        <div className="bg-primary-100 row not-last-children:border-r not-last-children:border-solid not-last-children:border-primary-300">
-          <div className="flex flex-1 h-8 center bubble-primary-100 clickable" onClick={() => window.open(website, "_blank")}>
+        <div className="bg-primary-100 col sm:row sm:not-last-children:border-r sm-max:not-last-children:border-b not-last-children:border-solid not-last-children:border-primary-300">
+          <div className="flex h-8 sm:flex-1 center bubble-primary-100 clickable" onClick={() => window.open(website, "_blank")}>
             <Icon name="globe" className="h-5 mr-2" />
             {say.website}
             <Bubble shade={100} color="primary" />
           </div>
-          <div className="flex flex-1 h-8 center">
+          <div className="flex h-8 sm:flex-1 center">
             <Icon name="file" className="h-5 mr-2" />
             {`${fileCount} ${say.files}`}
           </div>
-          <div className="flex flex-1 h-8 center">
+          <div className="flex h-8 sm:flex-1 center">
             <Icon name="code" className="h-5 mr-2" />
             {`${lineOfCodeCount} ${say.linesOfCode}`}
           </div>

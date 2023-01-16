@@ -14,9 +14,9 @@ export function Projects(): JSX.Element {
   return (
     <div className="w-full pt-8 pb-8 shrink-0 h-max center col bg-primary-500">
       <Fade top={true}>
-        <h2 className="mb-5 font-sans font-normal text-white">{say.previousProjects}</h2>
+        <h2 className="mb-10 font-sans font-normal text-center text-white">{say.previousProjects}</h2>
       </Fade>
-      <div className="w-full max-w-screen-md col not-last-children:mb-3">
+      <div className="w-full max-w-screen-md p-3 col not-last-children:mb-3">
         <ProjectItem
           businessName="Resolve Me"
           businessDescription={say.multiFunctionCalculator}

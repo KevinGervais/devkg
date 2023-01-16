@@ -2,7 +2,7 @@ import { Switch } from "react-router-dom"
 
 import { tw } from "@/shared"
 
-import { Footer, GlobalStyle, Loading, ShowTermsWarning, Snackbar, TitleBar } from "@/components"
+import { Footer, GlobalStyle, Loading, Nav, ShowTermsWarning, Snackbar, TitleBar } from "@/components"
 import * as pages from "@/pages"
 import { ActivePopup } from "@/popups"
 
@@ -20,7 +20,8 @@ export function Routes(): JSX.Element {
         <Loading />
         <ShowTermsWarning />
         <ActivePopup />
-        <div className="col">
+        <Nav />
+        <div className="col mt-[60px]">
           <Switch>
             <AnyRoute isExact={true} path="/home" component={pages.Home} />
             <AnyRoute isExact={true} path="/about-us" component={pages.AboutUs} />

@@ -19,7 +19,7 @@ export function TechUsed(): JSX.Element {
       className="w-full pt-8 pb-8 bg-white shrink-0 h-max center col"
     >
       <Fade top={true}>
-        <h2 className="mb-5 font-sans font-normal">{say.techUsed}</h2>
+        <h2 className="mb-5 font-sans font-normal text-center">{say.techUsed}</h2>
       </Fade>
       <div className="flex flex-wrap max-w-screen-md center">
         {LOGO_LIST.map(str => (
