@@ -86,9 +86,9 @@ export function ProjectItem({
           <div className="items-center w-full pb-4 col">
             <div className="col">
               {(selectedLanguage === "en" ? enList : frList).map((val, index) => (
-                <div key={index} className="relative flex">
+                <div key={index} className="relative flex mb-2">
                   <Icon name="check-circle" type="solid" className="absolute h-3 mt-1 mr-2 text-primary-500" />
-                  <p className="ml-5 break-words whitespace-pre-wrap">
+                  <p className="ml-5 leading-[1.1] break-words whitespace-pre-wrap">
                     {val}
                   </p>
                 </div>
