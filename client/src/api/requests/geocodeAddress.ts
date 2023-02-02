@@ -1,10 +1,11 @@
-import { AddressRequests, AnyAddress, Remove } from "@/shared"
+import { AddressRequests, AnyAddress, Remove, debounce } from "@/shared"
 
 import { handleSocketRequest } from "@/api/functions"
 import { getReduxState, setReduxState } from "@/redux"
 
-export function geocodeAddress({
-  isLoadingHidden, ...query
+export function geocodeAddressUnbounced({
+  isLoadingHidden,
+  ...query
 }: Remove<AddressRequests["geocode"]["params"], "language">
   & { isLoadingHidden: boolean }
 ): Promise<AnyAddress[]> {
@@ -24,3 +25,5 @@ export function geocodeAddress({
       })
   })
 }
+
+export const geocodeAddress = debounce(geocodeAddressUnbounced, 300)

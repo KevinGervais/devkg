@@ -654,5 +654,5 @@ export const fr: Say = {
   carBrokerage: "Service de courtage et de catalogue de voitures",
   now: "Maintenant",
   files: "Fichiers",
-  linesOfCode: "Lignes de code"
+  linesOfCode: "Lignes de code",
 }

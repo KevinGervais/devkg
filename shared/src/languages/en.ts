@@ -653,7 +653,7 @@ I really enjoyed working with him.,
   carBrokerage: "Car brokerage and catalog service",
   now: "Now",
   files: "Files",
-  linesOfCode: "Lines of code"
+  linesOfCode: "Lines of code",
 } as const
 
 export const enSay: EnSay = en

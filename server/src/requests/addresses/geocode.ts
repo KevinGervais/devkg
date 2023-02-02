@@ -1,33 +1,27 @@
-import { AllCountryCodes, AllStates, AnyAddress, STATE_BY_STATE_CODE, generateId } from "shared"
+import { AllCountryCodes, AllStateCodes, AllStates, AnyAddress, STATE_BY_STATE_CODE, generateId } from "shared"
 
 import { SocketParams } from "@/classes/model"
-import { HERE_API_KEY } from "@/constants"
-import { throwError } from "@/functions"
+import { handleHereRequest, throwError } from "@/functions"
 import { getSay } from "@/functions/getSay"
 
 export async function geocode({ body, send }: SocketParams<"addresses", "geocode">): Promise<void> {
-  const nodeFetch = (url: string) => import("node-fetch").then(result => result.default(url))
   const {
     searchField,
     lat,
     lng,
     language
   } = body
-  const say = getSay("fr")
+  const say = getSay(language)
 
   if (searchField) {
-    const query1 = `https://autocomplete.search.hereapi.com/v1/autocomplete?apiKey=${HERE_API_KEY}&q=${encodeURIComponent(searchField)}&lang=${language}-CA&in=countryCode:CAN&limit=4`
-    const response1 = await nodeFetch(query1)
-    const json1: any = await response1.json()
+    const autocompleteJson = await handleHereRequest("autocomplete", { searchField, language })
 
-    const arr: (AnyAddress | undefined)[] = await Promise.all((json1.items || []).map(async (result: any) => {
-      const query2 = `https://geocode.search.hereapi.com/v1/geocode?apiKey=${HERE_API_KEY}&q=${encodeURIComponent(result.title)}&lang=${language}-CA&in=countryCode:CAN&limit=1`
-      const response2 = await nodeFetch(query2)
-      const json2: any = await response2.json()
-      if (!json2.items || !json2.items[0]) {
+    const arr: (AnyAddress | undefined)[] = await Promise.all((autocompleteJson.items || []).map(async result => {
+      const geocodeJson = await handleHereRequest("geocode", { searchField: result.title, language })
+      if (!geocodeJson.items || !geocodeJson.items[0]) {
         return undefined
       }
-      const item = json2.items[0]
+      const item = geocodeJson.items[0]
       const countryCode = (item.address.countryCode as string).toLowerCase() as AllCountryCodes
       const country = say[countryCode]
       if (countryCode === undefined || countryCode !== "can" || !item.address.city) {
@@ -45,10 +39,10 @@ export async function geocode({ body, send }: SocketParams<"addresses", "geocode
         streetName: item.address.street,
         city: item.address.city,
         stateOrRegion,
-        stateCode: item.address.stateCode,
+        stateCode: item.address.stateCode as any,
         postalCode: item.address.postalCode,
         country,
-        countryCode: item.address.countryCode,
+        countryCode,
         lat: item.position.lat,
         lng: item.position.lng,
       }
@@ -56,11 +50,10 @@ export async function geocode({ body, send }: SocketParams<"addresses", "geocode
     }))
     send(arr.filter(address => address !== undefined) as AnyAddress[])
   } else if (lat && lng) {
-    const query = `https://revgeocode.search.hereapi.com/v1/revgeocode?apiKey=${HERE_API_KEY}&at=${lat},${lng}&lang=${language}-CA&limit=1`
-    const response = await nodeFetch(query)
-    const json: any = await response.json()
-    const item = json.items[0]
-    if (!json.items || !json.items[0]) {
+    const reverseGeocodeJson = await handleHereRequest("reverseGeocode", { lat, lng, language })
+
+    const item = (reverseGeocodeJson.items || [])[0]
+    if (!reverseGeocodeJson.items || !reverseGeocodeJson.items[0] || !item) {
       return undefined
     }
     const countryCode = (item.address.countryCode as string).toLowerCase() as AllCountryCodes
@@ -80,10 +73,10 @@ export async function geocode({ body, send }: SocketParams<"addresses", "geocode
       streetName: item.address.street,
       city: item.address.city,
       stateOrRegion,
-      stateCode: item.address.stateCode,
+      stateCode: item.address.stateCode.toUpperCase() as AllStateCodes,
       postalCode: item.address.postalCode,
       country,
-      countryCode: item.address.countryCode,
+      countryCode,
       lat: item.position.lat,
       lng: item.position.lng,
     }

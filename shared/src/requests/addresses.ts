@@ -5,7 +5,7 @@ import { AllCountryCodes, AllStateCodes, AllStates, LanguageParams, Remove } fro
 export interface PostalAddress {
   _id: string
   address: string
-  streetNumber: string
+  streetNumber?: string
   streetName: string
   streetExt?: string
   city: string

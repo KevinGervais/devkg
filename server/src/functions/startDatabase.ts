@@ -10,10 +10,11 @@ export function startDatabase(): Promise<Db> {
     MongoClient.connect(
       DATABASE.url,
       {
-        ignoreUndefined: true
+        ignoreUndefined: true,
       },
       (err, client) => {
         if (err) {
+          log("mongodb not connected..." + err, "error")
           return reject(err)
         }
         log(`Connected to ${DATABASE.name} database`, "success")
