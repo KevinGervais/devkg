@@ -4,7 +4,7 @@ import { HTTPRequestHandler } from "@/classes"
 import { simplifyQuery, throwError } from "@/functions"
 
 export function getMany(handleRequest: HTTPRequestHandler["handleRequest"]): void {
-  handleRequest("files", "getMany", async ({ dbQueries, currentUser, body, send }) => {
+  handleRequest("files", "getMany", async ({ mongodb, currentUser, body, send }) => {
     const {
       idList,
       dataType,
@@ -14,7 +14,7 @@ export function getMany(handleRequest: HTTPRequestHandler["handleRequest"]): voi
       _id: { $in: idList }
     })
 
-    const fileList = await dbQueries.getMany("files", query, {
+    const fileList = await mongodb.getMany("files", query, {
       projection: {
         thumbnailData: dataType !== "small" ? 0 : undefined,
         data: dataType !== "original" ? 0 : undefined,

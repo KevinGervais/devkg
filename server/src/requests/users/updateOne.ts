@@ -13,7 +13,7 @@ import { updateOneValidateToken } from "./updateOneValidateToken"
 
 
 export async function updateOne(params: SocketParams<"users", "updateOne">): Promise<void> {
-  const { currentUser, body, send, refreshCurrentUser, dbQueries } = params
+  const { currentUser, body, send, refreshCurrentUser, mongodb } = params
   const {
     email,
     password,
@@ -82,7 +82,7 @@ export async function updateOne(params: SocketParams<"users", "updateOne">): Pro
   }
 
 
-  await dbQueries.updateOne("users", { _id: currentUser._id }, { $set: query })
+  await mongodb.updateOne("users", { _id: currentUser._id }, { $set: query })
   send(undefined)
   await refreshCurrentUser()
 }

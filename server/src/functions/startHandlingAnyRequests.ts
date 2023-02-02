@@ -3,17 +3,17 @@ import { Db } from "mongodb"
 import path from "path"
 import { Server } from "socket.io"
 
-import { DbQueries, HTTPRequestHandler, SocketRequestHandler } from "@/classes"
+import { Mongodb, HTTPRequestHandler, SocketRequestHandler } from "@/classes"
 import { launchAllRoutines } from "@/routines"
 
 import { log } from "./log"
 export async function startHandlingAnyRequests({ db, app, io }: { db: Db, app: Express, io: Server }): Promise<void> {
-  const dbQueries = new DbQueries(db)
+  const mongodb = new Mongodb(db)
   SocketRequestHandler.serverState = {
     db,
     io,
     app,
-    dbQueries,
+    mongodb,
     emitGeneric: (emitCollection, emitPath, id, data) => {
       log(`/api/${emitCollection}/${emitPath as string}${id ? `/${id}` : ""}`, "info")
       io.emit(`/api/${emitCollection}/${emitPath as string}${id ? `/${id}` : ""}`, data)

@@ -5,7 +5,7 @@ import { sendEmail } from "@/emails/functions/sendEmail"
 import { compareCrypted, crypt, throwError } from "@/functions"
 
 export async function updateOnePassword({
-  currentUser, body, dbQueries, send, refreshCurrentUser
+  currentUser, body, mongodb, send, refreshCurrentUser
 }: SocketParams<"users", "updateOne">): Promise<void> {
   const { password, oldPassword, language } = body
   if (!currentUser || !password || !oldPassword) {
@@ -26,7 +26,7 @@ export async function updateOnePassword({
 
   }
 
-  await dbQueries.updateOne("users", { _id: currentUser._id }, { $set: query })
+  await mongodb.updateOne("users", { _id: currentUser._id }, { $set: query })
   send(undefined)
   await refreshCurrentUser()
   await sendEmail(

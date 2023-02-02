@@ -1,17 +1,17 @@
 import { Base64File, PublicFile, generateId } from "shared"
 import sharp from "sharp"
 
-import { DbQueries } from "@/classes"
+import { Mongodb } from "@/classes"
 
 import { sequentialAwait } from "."
 
 export async function createManyFiles(
   imageFileList: PublicFile[],
-  dbQueries: DbQueries,
+  mongodb: Mongodb,
 ): Promise<{ idList: string[], newIdList: string[] }>
 export async function createManyFiles(
   imageFileList: PublicFile[],
-  dbQueries: DbQueries,
+  mongodb: Mongodb,
   oldImageIdList: string[]
 ): Promise<{
   idList: string[],
@@ -20,7 +20,7 @@ export async function createManyFiles(
 }>
 export async function createManyFiles<OldIdList>(
   imageFileList: PublicFile[],
-  dbQueries: DbQueries,
+  mongodb: Mongodb,
   oldImageIdList?: OldIdList
 ): Promise<{
   idList: string[],
@@ -30,7 +30,7 @@ export async function createManyFiles<OldIdList>(
   const idList: string[] = []
   const newFileList: Base64File[] = []
   await sequentialAwait(imageFileList, async file => {
-    const existingFile = await dbQueries.getOne("files", { _id: file._id }, { projection: { _id: 1, data: 1 } })
+    const existingFile = await mongodb.getOne("files", { _id: file._id }, { projection: { _id: 1, data: 1 } })
     const isIdRecreate = existingFile && existingFile.data !== file.data
     const isAlreadyExists = existingFile && existingFile.data === file.data
     if (isAlreadyExists) {
@@ -57,7 +57,7 @@ export async function createManyFiles<OldIdList>(
     idList.push(finalFile._id)
   })
   if (newFileList.length) {
-    await dbQueries.createMany("files", newFileList)
+    await mongodb.createMany("files", newFileList)
   }
   const newIdList = newFileList.map(item => item._id)
 

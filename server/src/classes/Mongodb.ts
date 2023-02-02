@@ -3,7 +3,7 @@ import { AllCollections, OptionalId, TypeByCollectionName, generateId } from "sh
 
 import { getObjectWithStrictUndefined } from "@/functions"
 
-export class DbQueries {
+export class Mongodb {
   private db: Db
   constructor(db: Db) {
     this.db = db

@@ -8,7 +8,7 @@ import { crypt, simplifyQuery, throwError } from "@/functions"
 
 const tokenByEmail: { [email: string]: string | undefined } = {}
 
-export async function createOne({ dbQueries, body, socket, createSession, send }: SocketParams<"users", "createOne">): Promise<void> {
+export async function createOne({ mongodb, body, socket, createSession, send }: SocketParams<"users", "createOne">): Promise<void> {
   const {
     firstName,
     lastName,
@@ -37,7 +37,7 @@ export async function createOne({ dbQueries, body, socket, createSession, send }
   })
 
   validateEmail(query.email)
-  const existingUser = await dbQueries.getOne("users", { email })
+  const existingUser = await mongodb.getOne("users", { email })
 
   if (existingUser) {
     throwError("userAlreadyExists")
@@ -47,7 +47,7 @@ export async function createOne({ dbQueries, body, socket, createSession, send }
       throwError("wrongToken")
     }
     const userAgent = socket.request.headers["user-agent"]!
-    const _id = await dbQueries.createOne("users", query)
+    const _id = await mongodb.createOne("users", query)
     await sendEmail(
       email,
       language,
@@ -59,7 +59,7 @@ export async function createOne({ dbQueries, body, socket, createSession, send }
     )
     const { password: p, emailToken, secureId, secureIdVerif, ...finalUser } = query
     createSession({ ...query, _id }, decryptedSecureId)
-    const sessionId = await dbQueries.createOne("sessions", {
+    const sessionId = await mongodb.createOne("sessions", {
       userId: _id,
       deviceId,
       creationDate: dayjs().toISOString(),

@@ -1,7 +1,7 @@
 import { SocketParams } from "@/classes/model"
 import { throwError } from "@/functions"
 
-export async function updateOneValidateToken({ currentUser, dbQueries, body, send, refreshCurrentUser }: SocketParams<"users", "updateOne">): Promise<void> {
+export async function updateOneValidateToken({ currentUser, mongodb, body, send, refreshCurrentUser }: SocketParams<"users", "updateOne">): Promise<void> {
   const {
     token,
   } = body
@@ -12,7 +12,7 @@ export async function updateOneValidateToken({ currentUser, dbQueries, body, sen
   if (!token || currentUser.emailToken.token !== token) {
     throwError("accessDenied")
   }
-  await dbQueries.updateOne("users", { _id: currentUser._id }, {
+  await mongodb.updateOne("users", { _id: currentUser._id }, {
     $unset: { emailToken: 1 },
     $set: { email: currentUser.emailToken.newEmail }
   })

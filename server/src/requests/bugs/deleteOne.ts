@@ -2,15 +2,15 @@ import { SocketParams } from "@/classes/model"
 import { paramsToProjection, throwError } from "@/functions"
 
 
-export async function deleteOne({ dbQueries, body, currentUser, send }: SocketParams<"bugs", "deleteOne">): Promise<void> {
+export async function deleteOne({ mongodb, body, currentUser, send }: SocketParams<"bugs", "deleteOne">): Promise<void> {
   const { _id } = body
   if (!currentUser || currentUser.role !== "admin") {
     throwError("accessDenied")
   }
-  const bugItem = await dbQueries.getOne("bugs", { _id }, paramsToProjection(["imageIdList"]))
+  const bugItem = await mongodb.getOne("bugs", { _id }, paramsToProjection(["imageIdList"]))
   if (bugItem) {
-    await dbQueries.deleteOne("bugs", { _id })
-    await dbQueries.deleteMany("files", { _id: { $in: bugItem.imageIdList } })
+    await mongodb.deleteOne("bugs", { _id })
+    await mongodb.deleteMany("files", { _id: { $in: bugItem.imageIdList } })
     send(undefined)
   } else {
     throwError("dataDoesntExists")

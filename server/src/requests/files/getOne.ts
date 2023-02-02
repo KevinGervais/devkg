@@ -2,7 +2,7 @@ import { HTTPRequestHandler } from "@/classes"
 import { simplifyQuery, throwError } from "@/functions"
 
 export function getOne(handleRequest: HTTPRequestHandler["handleRequest"]): void {
-  handleRequest("files", "getOne", async ({ dbQueries, currentUser, body, send }) => {
+  handleRequest("files", "getOne", async ({ mongodb, currentUser, body, send }) => {
     const {
       _id,
       dataType,
@@ -12,7 +12,7 @@ export function getOne(handleRequest: HTTPRequestHandler["handleRequest"]): void
       _id
     })
 
-    const file = await dbQueries.getOne("files", query, {
+    const file = await mongodb.getOne("files", query, {
       projection: {
         thumbnailData: dataType !== "small" ? 0 : undefined,
         data: dataType !== "original" ? 0 : undefined,

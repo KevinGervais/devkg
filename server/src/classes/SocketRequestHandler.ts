@@ -80,7 +80,7 @@ export class SocketRequestHandler {
           validate(collection, path, finalBody)
 
           if (shared.LANGUAGE_LIST.includes(finalBody.language) && this.socketState.currentUser && !this.socketState.currentUser.language) {
-            await SocketRequestHandler.serverState.dbQueries.updateOne("users", {
+            await SocketRequestHandler.serverState.mongodb.updateOne("users", {
               _id: this.socketState.currentUser._id
             }, {
               $set: { language: finalBody.language }
@@ -120,7 +120,7 @@ export class SocketRequestHandler {
   }
   private async refreshCurrentUser(): Promise<void> {
     if (this.socketState.currentUser) {
-      const user = await SocketRequestHandler.serverState.dbQueries.getOne("users", {
+      const user = await SocketRequestHandler.serverState.mongodb.getOne("users", {
         _id: this.socketState.currentUser._id
       })
       if (user) {

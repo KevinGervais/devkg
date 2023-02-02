@@ -4,13 +4,13 @@ import { SocketParams } from "@/classes/model"
 import { sendEmail } from "@/emails/functions/sendEmail"
 import { throwError } from "@/functions"
 
-export async function updateOneToken({ currentUser, body, dbQueries, send, refreshCurrentUser }: SocketParams<"users", "updateOne">): Promise<void> {
+export async function updateOneToken({ currentUser, body, mongodb, send, refreshCurrentUser }: SocketParams<"users", "updateOne">): Promise<void> {
   const { language } = body
   if (!currentUser || !currentUser.emailToken) {
     throwError("accessDenied")
   }
   const newToken = generateId(5, true)
-  await dbQueries.updateOne("users", { _id: currentUser._id }, {
+  await mongodb.updateOne("users", { _id: currentUser._id }, {
     $set: {
       "emailToken.token": newToken,
     }

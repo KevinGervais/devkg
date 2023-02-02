@@ -5,7 +5,7 @@ import { AllCollections, AllRequests, RequestData, RequiredKeys, TypeByCollectio
 import { User } from "shared"
 import { Server, Socket } from "socket.io"
 
-import { DbQueries } from "./classes"
+import { Mongodb } from "./classes"
 
 export type SchemaDefinition<
   CollectionKey extends AllCollections,
@@ -39,7 +39,7 @@ export interface ServerState {
   io: Server
   db: Db
   app: Express
-  dbQueries: DbQueries
+  mongodb: Mongodb
   currentUserBySocketId: CurrentUserBySocketId
   emitGeneric: EmitGeneric
 }

@@ -6,7 +6,7 @@ import { createManyFiles } from "@/functions"
 
 import json from "../../../package.json"
 
-export async function createOne({ dbQueries, body, send }: SocketParams<"bugs", "createOne">): Promise<void> {
+export async function createOne({ mongodb, body, send }: SocketParams<"bugs", "createOne">): Promise<void> {
   const {
     deviceId,
     operatingSystem,
@@ -31,9 +31,9 @@ export async function createOne({ dbQueries, body, send }: SocketParams<"bugs", 
     query.appVersion = json.version
   }
   if (imageFileList.length) {
-    query.imageIdList = (await (createManyFiles(imageFileList, dbQueries))).idList
+    query.imageIdList = (await (createManyFiles(imageFileList, mongodb))).idList
   }
-  await dbQueries.createOne("bugs", {
+  await mongodb.createOne("bugs", {
     ...query,
     creationDate: dayjs().toISOString()
   })

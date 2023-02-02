@@ -4,7 +4,7 @@ import { SocketParams } from "@/classes/model"
 import { sendEmail } from "@/emails/functions/sendEmail"
 import { throwError } from "@/functions"
 
-export async function createOne({ dbQueries, currentUser, body, send }: SocketParams<"emails", "createOne">): Promise<void> {
+export async function createOne({ mongodb, currentUser, body, send }: SocketParams<"emails", "createOne">): Promise<void> {
   const {
     subject,
     title,
@@ -15,7 +15,7 @@ export async function createOne({ dbQueries, currentUser, body, send }: SocketPa
   if ((emailList.length > 1 || emailList[0] !== "info@kevingervais.herokuapp.com") && (!currentUser || currentUser.role !== "admin")) {
     throwError("accessDenied")
   }
-  const userList = await dbQueries.getMany("users", {}) as User[]
+  const userList = await mongodb.getMany("users", {}) as User[]
   const userMap: { [key: string]: User } = userList.reduce((map, user) => ({ ...map, [user.email]: user }), {})
   await Promise.all(emailList.map(async email => {
     const user = userMap[email]

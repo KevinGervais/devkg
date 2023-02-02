@@ -7,17 +7,17 @@ export async function getCurrentUser(
   {
     sessionId,
     userId,
-    dbQueries,
+    mongodb,
     socket,
     notificationRegistrationId
-  }: Pick<ServerState, "dbQueries"> & Pick<SocketState, "socket"> & SessionRequests["createOne"]["params"]
+  }: Pick<ServerState, "mongodb"> & Pick<SocketState, "socket"> & SessionRequests["createOne"]["params"]
 ): Promise<User | undefined> {
   try {
     const userAgent = socket.request.headers["user-agent"]
     if (!sessionId || !userId || !userAgent) {
       return undefined
     }
-    const sessionList = await dbQueries.getMany("sessions", { userId })
+    const sessionList = await mongodb.getMany("sessions", { userId })
     let foundSession: Session | undefined
     await Promise.all(sessionList.map(async item => {
       const isSame = await compareCrypted(item._id, sessionId)
@@ -31,19 +31,19 @@ export async function getCurrentUser(
     }
 
     if (foundSession.userAgent !== userAgent) {
-      await dbQueries.deleteOne("sessions", { _id: foundSession._id, userId: foundSession.userId })
+      await mongodb.deleteOne("sessions", { _id: foundSession._id, userId: foundSession.userId })
       return undefined
     }
     if (foundSession.notificationRegistrationId !== notificationRegistrationId) {
 
-      await dbQueries.updateOne("sessions", { _id: foundSession._id }, {
+      await mongodb.updateOne("sessions", { _id: foundSession._id }, {
         $set: {
           notificationRegistrationId
         }
       })
     }
 
-    return await dbQueries.getOne("users", { _id: foundSession.userId })
+    return await mongodb.getOne("users", { _id: foundSession.userId })
 
   } catch (err) {
     return undefined

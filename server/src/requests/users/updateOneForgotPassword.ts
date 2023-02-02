@@ -4,14 +4,14 @@ import { SocketParams } from "@/classes/model"
 import { sendEmail } from "@/emails/functions/sendEmail"
 import { crypt, throwError } from "@/functions"
 
-export async function updateOneForgotPassword({ currentUser, body, dbQueries, send }: SocketParams<"users", "updateOne">): Promise<void> {
+export async function updateOneForgotPassword({ currentUser, body, mongodb, send }: SocketParams<"users", "updateOne">): Promise<void> {
   const { forgotPasswordEmail, language } = body
   if (currentUser || !forgotPasswordEmail) {
     throwError("accessDenied")
   }
 
 
-  const user = await dbQueries.getOne("users", { email: forgotPasswordEmail })
+  const user = await mongodb.getOne("users", { email: forgotPasswordEmail })
   if (!user) {
     throwError("userDoesntExists")
   }
@@ -25,8 +25,8 @@ export async function updateOneForgotPassword({ currentUser, body, dbQueries, se
     secureIdVerif: await crypt(decryptedSecureId),
   }
 
-  await dbQueries.updateOne("users", { email: user.email }, { $set: query })
-  await dbQueries.deleteMany("sessions", { userId: user._id })
+  await mongodb.updateOne("users", { email: user.email }, { $set: query })
+  await mongodb.deleteMany("sessions", { userId: user._id })
   send(undefined)
   await sendEmail(
     user.email,

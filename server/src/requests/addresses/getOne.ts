@@ -1,25 +1,25 @@
 import { AllRequests, PostalAddress } from "shared"
 
-import { DbQueries } from "@/classes"
+import { Mongodb } from "@/classes"
 import { SocketParams } from "@/classes/model"
 import { paramsToProjection, throwError } from "@/functions"
 import { SocketState } from "@/model"
 import { round } from "@turf/turf"
 
-export async function getOne({ dbQueries, currentUser, body, send }: SocketParams<"addresses", "getOne">): Promise<void> {
+export async function getOne({ mongodb, currentUser, body, send }: SocketParams<"addresses", "getOne">): Promise<void> {
   const {
     _id,
     params
   } = body
 
-  let isError = await validateParams(body, dbQueries, currentUser)
+  let isError = await validateParams(body, mongodb, currentUser)
   let isPublicCoords: boolean = false
   if (isError) {
     isError = await validateParams({
       ...body,
       params: (params || []).filter(param => !["lng", "lat"].includes(param))
     },
-      dbQueries,
+      mongodb,
       currentUser
     )
     if (isError) {
@@ -29,7 +29,7 @@ export async function getOne({ dbQueries, currentUser, body, send }: SocketParam
     }
   }
 
-  const address = await dbQueries.getOne("addresses", { _id }, paramsToProjection(params))
+  const address = await mongodb.getOne("addresses", { _id }, paramsToProjection(params))
   if (!address) {
     throwError("dataDoesntExists")
   }
@@ -53,7 +53,7 @@ const publicParams: (keyof PostalAddress)[] = [
 
 async function validateParams(
   body: AllRequests["addresses"]["getOne"]["params"],
-  dbQueries: DbQueries,
+  mongodb: Mongodb,
   currentUser: SocketState["currentUser"]
 ): Promise<boolean> {
   const { _id, params } = body

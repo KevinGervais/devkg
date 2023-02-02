@@ -1,13 +1,13 @@
 import { Base64File, PublicFile, generateId } from "shared"
 import sharp from "sharp"
 
-import { DbQueries } from "@/classes"
+import { Mongodb } from "@/classes"
 
 export async function createOneFile(
   file: PublicFile,
-  dbQueries: DbQueries
+  mongodb: Mongodb
 ): Promise<string> {
-  const existingFile = await dbQueries.getOne("files", { _id: file._id }, { projection: { _id: 1, data: 1 } })
+  const existingFile = await mongodb.getOne("files", { _id: file._id }, { projection: { _id: 1, data: 1 } })
   const isIdRecreate = existingFile && existingFile.data !== file.data
   const isAlreadyExists = existingFile && existingFile.data === file.data
   if (isAlreadyExists) {
@@ -28,5 +28,5 @@ export async function createOneFile(
       thumbnailData: resizedBase64
     }
   }
-  return await dbQueries.createOne("files", finalFile)
+  return await mongodb.createOne("files", finalFile)
 }

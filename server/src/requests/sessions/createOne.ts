@@ -5,7 +5,7 @@ import { SocketParams } from "@/classes/model"
 import { validateEmail } from "@/emails/functions"
 import { compareCrypted, crypt, getCurrentUser, simplifyQuery, throwError } from "@/functions"
 
-export async function createOne({ body, socket, createSession, dbQueries, send }: SocketParams<"sessions", "createOne">): Promise<void> {
+export async function createOne({ body, socket, createSession, mongodb, send }: SocketParams<"sessions", "createOne">): Promise<void> {
   const {
     email,
     password,
@@ -16,7 +16,7 @@ export async function createOne({ body, socket, createSession, dbQueries, send }
     notificationRegistrationId
   } = body
   if (sessionId || userId) {
-    const currentUser = await getCurrentUser({ socket, dbQueries, sessionId, userId, notificationRegistrationId })
+    const currentUser = await getCurrentUser({ socket, mongodb, sessionId, userId, notificationRegistrationId })
 
     if (currentUser) {
       if (!secureId) {
@@ -47,7 +47,7 @@ export async function createOne({ body, socket, createSession, dbQueries, send }
     throwError("accessDenied")
   }
 
-  const user = await dbQueries.getOne("users", { email })
+  const user = await mongodb.getOne("users", { email })
   if (!user) {
     throwError("userDoesntExists")
   }
@@ -56,7 +56,7 @@ export async function createOne({ body, socket, createSession, dbQueries, send }
     throwError("wrongPassword")
   }
   const decryptedSecureId = fromAES(user.secureId, password, () => throwError("corruptedData"), true)
-  const _id = await dbQueries.createOne("sessions", {
+  const _id = await mongodb.createOne("sessions", {
     userId: user._id,
     userAgent,
     deviceId,
