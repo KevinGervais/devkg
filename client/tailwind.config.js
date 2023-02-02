@@ -410,6 +410,12 @@ module.exports = {
     }),
     plugin(function({ addComponents }) {
       addComponents({
+        ".trunkate": {
+          overflow: "hidden",
+          whitespace: "nowrap",
+          textOverflow: "ellipsis",
+          width: "100%"
+        },
         ".center": {
           display: "flex",
           alignItems: "center",
