@@ -4,12 +4,12 @@ const en = (
   <>
     <h2>Terms & Conditions</h2>
     <p>
-      The term used "KevinGervais" in these Terms & Conditions refers to our website https://kevingervais.herokuapp.com
-      and our KevinGervais iOS and Android app unless otherwise defined in this
+      The term used "DevKG Inc." in these Terms & Conditions refers to our website https://devkg.ca
+      and our DevKG Inc. iOS and Android app unless otherwise defined in this
       Privacy Policy.
     </p>
     <p>
-      As you browse KevinGervais, these terms will be
+      As you browse DevKG Inc., these terms will be
       automatically applied to you - so you should make sure that
       that you read them carefully before using the application. You are not
       allowed to copy, or modify the application, any part of the application
@@ -19,52 +19,52 @@ const en = (
       make derivative versions. The application itself and all commercial,
       copyright, database rights and other intellectual property rights,
       the property rights related to it all belong to
-      Kevin Gervais
+      DevKG Inc.
     </p>
 
     <p>
-      Kevin Gervais is committed to making KevinGervais
+      DevKG Inc. is committed to making DevKG Inc.
       is as useful and effective as possible. For this reason, we
-      reserve the right to make changes to KevinGervais at any time and for any reason.
+      reserve the right to make changes to DevKG Inc. at any time and for any reason.
     </p>
     <p>
-      KevinGervais stores and processes personal data
+      DevKG Inc. stores and processes personal data
       that you have provided to us, in order to provide
       our service.
     </p>
     <p>
       You should be aware that there are certain things that
-      Kevin Gervais does not take responsibility for.
-      Some functions of KevinGervais will require KevinGervais to have an active
+      DevKG Inc. does not take responsibility for.
+      Some functions of DevKG Inc. will require DevKG Inc. to have an active
       Internet connection. The connection may be Wi-Fi or
       provided by your mobile network provider, but
-      Kevin Gervais cannot assume responsibility for the application not working at full functionality if you do not have
+      DevKG Inc. cannot assume responsibility for the application not working at full functionality if you do not have
       access to Wi-Fi.
     </p>
     <p />
     <p>
-      In the same vein, Kevin Gervais cannot always
-      take responsibility for how you use KevinGervais, i.e.
+      In the same vein, DevKG Inc. cannot always
+      take responsibility for how you use DevKG Inc., i.e.
       you need to make sure your device stays charged - if it
-      battery and you can't turn it on to enjoy the Service, Kevin Gervais
-      service, Kevin Gervais cannot be held responsible.
+      battery and you can't turn it on to enjoy the Service, DevKG Inc.
+      service, DevKG Inc. cannot be held responsible.
       responsible.
     </p>
     <p>
-      With respect to Kevin Gervais's liability regarding
-      your use of KevinGervais, when using it, it is important to keep in mind that
+      With respect to DevKG Inc.'s liability regarding
+      your use of DevKG Inc., when using it, it is important to keep in mind that
       important to keep in mind that, while we strive to ensure that it is updated
       ensure that it is updated and correct at all times, we do
       rely on third parties to provide us with information so that
       we can make it available to you.
-      Kevin Gervais disclaims any responsibility for any loss,
+      DevKG Inc. disclaims any responsibility for any loss,
       direct or indirect that you encounter on any third party dependent functionality in the application.
     </p>
     <p>
-      At some point, we may want to update KevinGervais
-      Kevin Gervais does not promise that
-      he will always update KevinGervais to make it relevant to you.
-      We may also wish to cease providing KevinGervais, and may terminate use at any time without
+      At some point, we may want to update DevKG Inc.
+      DevKG Inc. does not promise that
+      he will always update DevKG Inc. to make it relevant to you.
+      We may also wish to cease providing DevKG Inc., and may terminate use at any time without
       use at any time without notice. Unless otherwise specified by us, upon termination
       the rights and licenses granted to you under these Terms
       will terminate;
@@ -72,7 +72,7 @@ const en = (
 
     <p> <strong>Non-compliance with these terms and conditions </strong> </p>
     <p>
-      KevinGervais gives itself the discretion to delete the account of those who abuse KevinGervais's terms and conditions.
+      DevKG Inc. gives itself the discretion to delete the account of those who abuse DevKG Inc.'s terms and conditions.
     </p>
     <p> <strong>Changes to these terms and conditions</strong> </p>
     <p>

@@ -7,5 +7,5 @@ export const IS_CORDOVA: boolean =
   && !window.location.hostname.match(
     /^[0-9.]+$/
   )
-  && !window.location.hostname.includes("kevingervais")
+  && !window.location.hostname.includes("devkg")
 // export const IS_CORDOVA: boolean = true

@@ -10,7 +10,7 @@ import {
 export const en = {
   payoutEmailMessage: (commerceTitle: string, userName: string) => `You received money for the commerce location: ${commerceTitle}, with user: ${userName}`,
   createCommerceTemplateHeader: (commerceTitle: string) => html`Your commerce <b>${commerceTitle}</b> has just been created`,
-  createUserTemplateHeader: (firstName: string) => html`Hi ${firstName} and welcome to the platform <b>KevinGervais</b>!`,
+  createUserTemplateHeader: (firstName: string) => html`Hi ${firstName} and welcome to the platform <b>DevKG Inc.</b>!`,
   updateCommerceTemplateHeader: (commerceTitle: string) => html`The status for your commerce <b>${commerceTitle}</b> has changed`,
   updateCommerceTitle: (commerceStatus: string) => `Your commerce status is now <b>${commerceStatus}</b>`,
   updateCommerceNotifTitle: (satus: string) => `Your commerce status is now ${satus}`,

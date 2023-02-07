@@ -28,7 +28,7 @@ export async function sendEmail<TemplateName extends AllEmailTemplates>(
   const { htmlTemplate, subject } = emailTemplateMap[name]({ ...params, say, language } as any)
   const htmlWithCss = await twToInlineStyle(htmlTemplate)
   const query: SendMailOptions = simplifyQuery({
-    from: "KevinGervais <notify@gocook.ca>",
+    from: "DevKG Inc. <notify@gocook.ca>",
     to: email,
     subject,
     html: htmlWithCss

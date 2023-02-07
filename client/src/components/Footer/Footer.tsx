@@ -25,7 +25,7 @@ export function Footer(): JSX.Element | null {
         </div>
       </div>
       <div className="flex col sm:!row  items-center justify-between w-full px-5 border-t border-solid py-3 border-grey-400 children:text-grey-600">
-        <span className="mb-3 sm:mb-0">{`© ${dayjs().get("year")} Kevin Gervais ${say.allRightsReserved} - 1.0.0`} </span>
+        <span className="mb-3 sm:mb-0">{`© ${dayjs().get("year")} DevKG Inc. ${say.allRightsReserved} - 1.0.0`} </span>
         <div className="flex not-last-children:mr-2">
           <Button isCircle={true} variant="outlined" color="grey" shade={500} iconType="brands" iconName="facebook" />
           <Button isCircle={true} variant="outlined" color="grey" shade={500} iconType="brands" iconName="twitter" />

@@ -9,11 +9,11 @@ export function preventUnhandledErrors(): void {
   process.on("uncaughtException", (err: any) => {
     const message = getSay("en")[err?.message as SayKeywordStrings] || err?.message
     log(message, "error")
-    sendErrorEmailToDev("kevingervais uncatched exception", message).catch(() => null)
+    sendErrorEmailToDev("DevKG Inc. uncatched exception", message).catch(() => null)
   })
   process.on("unhandledRejection", (err: any) => {
     const message = getSay("en")[err?.message as SayKeywordStrings] || err?.message
     log(message, "error")
-    sendErrorEmailToDev("kevingervais unhandled exception", message).catch(() => null)
+    sendErrorEmailToDev("DevKG Inc. unhandled exception", message).catch(() => null)
   })
 }

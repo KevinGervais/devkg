@@ -15,9 +15,9 @@ export const routes = (currentState: RoutesState, action: SetAction<"routes">) =
     window.document.getElementById("root")!.scrollTop = 0
     resetScrollTop()
     if (data.firstPath) {
-      window.document.title = `KevinGervais - ${data.firstPath}`
+      window.document.title = `DevKG Inc. - ${data.firstPath}`
     } else {
-      window.document.title = "KevinGervais"
+      window.document.title = "DevKG Inc."
     }
   }
   return {

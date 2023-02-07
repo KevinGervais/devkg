@@ -21,7 +21,7 @@ export function Header(): JSX.Element {
       <h2 className="flex pb-16 text-2xl sm:text-[40px] sm:pb-[90px] text-white center bg-primary-600 h-1/5">
         <div>
           <Zoom>
-            Kevin Gervais
+            DevKG Inc.
           </Zoom>
         </div>
       </h2>

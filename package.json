@@ -3,7 +3,7 @@
   "version": "0.10.0",
   "description": "",
   "main": "server/build/index.js",
-  "homepage": "https://kevingervais.herokuapp.com/",
+  "homepage": "https://devkg.ca/",
   "engines": {
     "node": "18.x",
     "yarn": "1.22"

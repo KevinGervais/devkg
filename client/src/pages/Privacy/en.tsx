@@ -4,13 +4,13 @@ const en = (
   <>
     <h2>Privacy Policy</h2>
     <p>
-      The term used "KevinGervais" in this Privacy Policy refers to our website https://kevingervais.herokuapp.com
-      and our KevinGervais iOS and Android app unless otherwise defined in this
+      The term used "DevKG Inc." in this Privacy Policy refers to our website https://devkg.ca
+      and our DevKG Inc. iOS and Android app unless otherwise defined in this
       Privacy Policy.
     </p>
     <p>
-      this website is built and owned by Kevin Gervais. This SERVICE is provided by.
-      Kevin Gervais and is intended to be
+      this website is built and owned by DevKG Inc.. This SERVICE is provided by.
+      DevKG Inc. and is intended to be
       be used as is.
     </p>
     <p>
@@ -24,7 +24,7 @@ const en = (
       to the collection and use of information in connection with this
       policy. The personal information we collect is
       used to provide and improve the service.
-      When using KevinGervais, we will not share
+      When using DevKG Inc., we will not share
       information with anyone else, except as described in this Privacy Policy.
       Privacy Policy.
     </p>
@@ -42,9 +42,9 @@ const en = (
     </p>
     <p><strong>Account creation and login</strong></p>.
     <p>
-      When you create an account and log in to KevinGervais,
+      When you create an account and log in to DevKG Inc.,
       an encrypted Id, last name, first name, avatar and password are associated with you.
-      Your KevinGervais account Id will be linked to you on our KevinGervais platforms for login,
+      Your DevKG Inc. account Id will be linked to you on our DevKG Inc. platforms for login,
       managing your commerces, purchases, conversations with other users and
       you have with other users as well as reviews and ratings you write.
     </p>
@@ -56,13 +56,13 @@ const en = (
       are stored on your device's internal memory.
     </p>
     <p>
-      These cookies and local storage are necessary for kevingervais.herokuapp.com to function properly.
-      You can choose not to use them by not using kevingervais.herokuapp.com services.
+      These cookies and local storage are necessary for devkg.ca to function properly.
+      You can choose not to use them by not using devkg.ca services.
     </p>
-    <p><strong>KevinGervais messaging</strong></p>
+    <p><strong>DevKG Inc. messaging</strong></p>
     <p>
-      KevinGervais email may be monitored at any time by the KevinGervais admin team
-      To ensure that KevinGervaiss terms and conditions are not violated.
+      DevKG Inc. email may be monitored at any time by the DevKG Inc. admin team
+      To ensure that DevKG Inc.s terms and conditions are not violated.
     </p>
     <p><strong>Service providers</strong></p>
     <p>
@@ -92,10 +92,10 @@ const en = (
       storage method is 100% secure and reliable.
       We cannot guarantee its absolute security.
 
-      The KevinGervais website and application make requests to our server in wss via ssl.
+      The DevKG Inc. website and application make requests to our server in wss via ssl.
       All web socket connections to our servers share an AES-256 key encrypted with RSA-512.
       All web socket requests made between the application or website and the
-      KevinGervais are encrypted and decrypted in AES-256 except for files for performance reasons.
+      DevKG Inc. are encrypted and decrypted in AES-256 except for files for performance reasons.
     </p>
     <p><strong>Links to other sites</strong></p>
     <p>

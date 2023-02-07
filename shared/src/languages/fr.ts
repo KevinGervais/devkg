@@ -600,7 +600,7 @@ export const fr: Say = {
   "km": "km",
   payoutEmailMessage: (commerceTitle: string, userName: string) => `Vous avez reçu de l'argent pour la location du commerce: ${commerceTitle}, avec l'utilisateur: ${userName}`,
   createCommerceTemplateHeader: (commerceTitle: string) => html`Votre commerce <b>${commerceTitle}</b> vient d'être créé`,
-  createUserTemplateHeader: (firstName: string) => html`Bonjour ${firstName} et bienvenue sur la plateforme <b>KevinGervais</b>!`,
+  createUserTemplateHeader: (firstName: string) => html`Bonjour ${firstName} et bienvenue sur la plateforme <b>DevKG Inc.</b>!`,
   updateCommerceTemplateHeader: (commerceTitle: string) => html`Le statut pour votre commerce <b>${commerceTitle}</b> a changé`,
   updateCommerceTitle: (commerceStatus: string) => `Le statut de votre commerce est maintenant <b>${commerceStatus}</b>.`,
   updateCommerceNotifTitle: (satus: string) => `Le statut de votre commerce est maintenant ${satus}`,

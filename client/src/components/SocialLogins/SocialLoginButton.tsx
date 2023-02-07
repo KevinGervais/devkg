@@ -38,7 +38,7 @@ export function SocialLoginButton(props: Props): JSX.Element {
       {...props}
       brand={props.provider}
       say={say}
-      redirect="https://kevingervais.herokuapp.com/settings"
+      redirect="https://devkg.ca/settings"
     />
   )
 }

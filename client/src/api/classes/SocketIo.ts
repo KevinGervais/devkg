@@ -17,7 +17,7 @@ export class SocketIo {
   public static launch(isSnackbarHidden?: boolean): Promise<void> {
     return new Promise((resolve, reject) => {
       const script = document.createElement("script")
-      script.src = IS_DEV ? `http://${window.location.hostname}:${window.location.port}/socket.io/socket.io.js` : "https://kevingervais.herokuapp.com/socket.io/socket.io.js"
+      script.src = IS_DEV ? `http://${window.location.hostname}:${window.location.port}/socket.io/socket.io.js` : "https://devkg.ca/socket.io/socket.io.js"
 
       if (document.querySelector(`script[src="${script.src}"]`)) {
         const { ui: { loadingCount } } = getReduxState()
@@ -42,7 +42,7 @@ export class SocketIo {
         this.Socket.disconnect()
       }
       if (window.io) {
-        const port = IS_DEV ? `ws://${window.location.hostname}:${window.location.port}` : "wss://kevingervais.herokuapp.com"
+        const port = IS_DEV ? `ws://${window.location.hostname}:${window.location.port}` : "wss://devkg.ca"
         const query: SocketQuery = { publicKey }
         this.Socket = window.io(port, { query: query as unknown as any })
         getCurrentSocketEvent()

@@ -4,13 +4,13 @@ const fr = (
   <>
     <h2>Politique de confidentialité</h2>
     <p>
-      Le terme utilisé "KevinGervais" dans cette politique de confidentialité fait référence à notre site web https://kevingervais.herokuapp.com
-      et notre application iOS et Android KevinGervais à moins qu'ils ne soient définis autrement dans la présente
+      Le terme utilisé "DevKG Inc." dans cette politique de confidentialité fait référence à notre site web https://devkg.ca
+      et notre application iOS et Android DevKG Inc. à moins qu'ils ne soient définis autrement dans la présente
       politique de confidentialité.
     </p>
     <p>
-      ce site web est construit et est la propriété de Kevin Gervais. Ce SERVICE est fourni par
-      Kevin Gervais et est destiné à être
+      ce site web est construit et est la propriété de DevKG Inc.. Ce SERVICE est fourni par
+      DevKG Inc. et est destiné à être
       être utilisé tel quel.
     </p>
     <p>
@@ -24,7 +24,7 @@ const fr = (
       à la collecte et à l'utilisation des informations en relation avec cette
       politique. Les informations personnelles que nous recueillons sont
       utilisées pour fournir et améliorer le service.
-      En utilisant KevinGervais, nous ne partagerons pas
+      En utilisant DevKG Inc., nous ne partagerons pas
       les informations avec quiconque, sauf dans les cas décrits dans la présente
       politique de confidentialité.
     </p>
@@ -42,9 +42,9 @@ const fr = (
     </p>
     <p><strong>Création de compte et connexion</strong></p>.
     <p>
-      Lorsque vous créez un compte et que vous vous connectez sur KevinGervais,
+      Lorsque vous créez un compte et que vous vous connectez sur DevKG Inc.,
       un Id, nom, prénom, avatar et mot de passe encrypté sont associés à vous.
-      Le Id de votre compte KevinGervais sera lié à vous sur nos plateformes KevinGervais pour la création de session,
+      Le Id de votre compte DevKG Inc. sera lié à vous sur nos plateformes DevKG Inc. pour la création de session,
       la gestion de vos produits, vos réservations, les conversations
       que vous avez avec les autres utilisateurs ainsi que les avis et évaluations que vous écriverez.
     </p>
@@ -56,13 +56,13 @@ const fr = (
       sont stockés sur la mémoire interne de votre appareil.
     </p>
     <p>
-      Ces cookies et ce stockage local sont nécessaires au bon fonctionnement de kevingervais.herokuapp.com.
-      Vous pouvez choisir de ne pas les utiliser en n'utilisant pas les services de kevingervais.herokuapp.com.
+      Ces cookies et ce stockage local sont nécessaires au bon fonctionnement de devkg.ca.
+      Vous pouvez choisir de ne pas les utiliser en n'utilisant pas les services de devkg.ca.
     </p>
-    <p><strong>Messagerie de KevinGervais</strong></p>
+    <p><strong>Messagerie de DevKG Inc.</strong></p>
     <p>
-      La messagerie de KevinGervais peut à tout moment être monitorée par l'équipe des administrateurs de KevinGervais
-      pour éviter que les termes et conditions de KevinGervaiss ne soient pas respectées
+      La messagerie de DevKG Inc. peut à tout moment être monitorée par l'équipe des administrateurs de DevKG Inc.
+      pour éviter que les termes et conditions de DevKG Inc.s ne soient pas respectées
     </p>
     <p><strong>Fournisseurs de services</strong></p>
     <p>
@@ -92,10 +92,10 @@ const fr = (
       de stockage électronique n'est sûre et fiable à 100 %.
       Nous ne pouvons pas garantir sa sécurité absolue.
 
-      Le site web et l'application de KevinGervais font des requêtes à notre serveur en wss via ssl.
+      Le site web et l'application de DevKG Inc. font des requêtes à notre serveur en wss via ssl.
       Toute connexion en web socket à nos serveurs partage une clée AES-256 encryptée en RSA-512.
       Toutes les requêtes en web socket faites entre l'application ou le site web et le serveur
-      KevinGervais sont encryptées et décryptées en AES-256 excepté pour les fichiers pour des raisons de performance.
+      DevKG Inc. sont encryptées et décryptées en AES-256 excepté pour les fichiers pour des raisons de performance.
     </p>
     <p><strong>Liens vers d'autres sites</strong></p>
     <p>
