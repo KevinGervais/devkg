@@ -1,21 +1,34 @@
 import { IS_ANY_IOS } from "@/constants"
-import { getScreenDimensions } from "@/ui/functions/getScreenDimensions"
-
+import { getScreenDimensions } from "@/ui/functions"
+type KeyboardDimmensions = {
+  currentViewport: {
+    height: number
+    width: number
+  },
+  keyboard: {
+    height: number
+    width: number
+  }
+  viewportWithoutKeyboard: {
+    height: number
+    width: number
+  },
+}
 
 export class KeyboardEventHandler {
-  private recentlyFocusedTimeoutDuration: number = 3000
-  private currentViewportWidth: number
-  private previousViewportWidth: number
-  private viewportWidthWithoutKeyboard: number
   private currentViewportHeight: number
-  private previousViewportHeight: number
-  private viewportHeightWithoutKeyboard: number
+  private currentViewportWidth: number
+  private hideCallback?: (sizes: KeyboardDimmensions) => void
   private keyboardVisible: boolean = false
+  private previousViewportHeight: number
+  private previousViewportWidth: number
   private recentlyFocused: boolean = false
   private recentlyFocusedTimeout: null | number = null
+  private recentlyFocusedTimeoutDuration: number = 3000
+  private showCallback?: (sizes: KeyboardDimmensions) => void
   private validFocusableElements: string[] = ["INPUT", "TEXTAREA"]
-  private showCallback?: (sizes: ReturnType<typeof this.getSizesData>) => void
-  private hideCallback?: (sizes: ReturnType<typeof this.getSizesData>) => void
+  private viewportHeightWithoutKeyboard: number
+  private viewportWidthWithoutKeyboard: number
   constructor(options?: { recentlyFocusedTimeoutDuration?: number }) {
     const { width, height } = getScreenDimensions()
     this.currentViewportWidth = width
@@ -46,19 +59,7 @@ export class KeyboardEventHandler {
     (window.visualViewport || window).addEventListener("resize", this.resizeHandler)
   }
 
-  public onShow(callback: typeof this.showCallback): void {
-    this.showCallback = callback
-  }
-
-  public onHide(callback: typeof this.hideCallback): void {
-    this.hideCallback = callback
-  }
-
-  public isKeyboardVisible(): boolean {
-    return this.keyboardVisible
-  }
-
-  public getKeyboardSize(): boolean | { width: number, height: number } {
+  public getKeyboardSize(): boolean | { height: number, width: number, } {
     if (!this.keyboardVisible) { return false }
 
     return {
@@ -67,20 +68,7 @@ export class KeyboardEventHandler {
     }
   }
 
-  public getSizesData(): {
-    viewportWithoutKeyboard: {
-      width: number
-      height: number
-    }
-    currentViewport: {
-      width: number
-      height: number
-    }
-    keyboard: {
-      width: number
-      height: number
-    }
-  } {
+  public getSizesData(): KeyboardDimmensions {
     return {
       viewportWithoutKeyboard: {
         width: this.viewportWidthWithoutKeyboard,
@@ -97,30 +85,16 @@ export class KeyboardEventHandler {
     }
   }
 
-  private keyboardVisibleHandler(): void {
-
-    this.keyboardVisible = true
-    this.recentlyFocused = false
-    if (this.showCallback) {
-      this.showCallback(this.getSizesData())
-    }
+  public isKeyboardVisible(): boolean {
+    return this.keyboardVisible
   }
 
-  private keyboardHiddenHandler(): void {
-    this.keyboardVisible = false
-    if (this.hideCallback) {
-      this.hideCallback(this.getSizesData())
-    }
+  public onHide(callback:(sizes: KeyboardDimmensions) => void): void {
+    this.hideCallback = callback
   }
 
-  private resetViewportSizes(): void {
-    const { width, height } = getScreenDimensions()
-    this.currentViewportWidth = width
-    this.previousViewportWidth = width
-    this.viewportWidthWithoutKeyboard = width
-    this.currentViewportHeight = height
-    this.previousViewportHeight = height
-    this.viewportHeightWithoutKeyboard = height
+  public onShow(callback: (sizes: KeyboardDimmensions) => void): void {
+    this.showCallback = callback
   }
 
   private documentFocusHandler(e: FocusEvent): void {
@@ -150,6 +124,32 @@ export class KeyboardEventHandler {
 
   private expireRecentlyFocused(): void {
     this.recentlyFocused = false
+  }
+
+  private keyboardHiddenHandler(): void {
+    this.keyboardVisible = false
+    if (this.hideCallback) {
+      this.hideCallback(this.getSizesData())
+    }
+  }
+
+  private keyboardVisibleHandler(): void {
+
+    this.keyboardVisible = true
+    this.recentlyFocused = false
+    if (this.showCallback) {
+      this.showCallback(this.getSizesData())
+    }
+  }
+
+  private resetViewportSizes(): void {
+    const { width, height } = getScreenDimensions()
+    this.currentViewportWidth = width
+    this.previousViewportWidth = width
+    this.viewportWidthWithoutKeyboard = width
+    this.currentViewportHeight = height
+    this.previousViewportHeight = height
+    this.viewportHeightWithoutKeyboard = height
   }
 
   private resizeHandler(): void {
